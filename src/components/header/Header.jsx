@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
 
-import logoHeader from "../images/logoPapeleria.png";
+import logoHeader from "../../images/logoPapeleria.png";
 import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-8 py-5 shadow-sm">
+    <header className="flex items-center justify-between px-8 py-5 shadow-sm bg-gray-50">
       <div className="flex items-center gap-x-4">
         <div className="">
           <img src={logoHeader} alt="Logo" className="size-20" />
         </div>
         <div>
           <p className="font-bold text-xl ">MODERNA</p>
-          <p className="font-light tracking-widest text-center">Papelería</p>
+          <p className="font-normal tracking-widest text-center text-red-500">Papelería</p>
         </div>
       </div>
       <div>
