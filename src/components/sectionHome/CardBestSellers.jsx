@@ -18,9 +18,13 @@ const CardBestSellers = ({imgProduct,text,price}) => {
                   </span>
                   <span className="text-gray-700 font-medium ">{price}</span>
                 </div>
-                <button className="bg-green-700 p-4 rounded-xl text-gray-100">
-                  SELECCIONAR PRODUCTO
+                <button className="bg-green-700 px-4 py-2 rounded-xl text-gray-100">
+                  VER PRODUCTO
                 </button>
+                <button className="bg-green-700 px-4 py-2 rounded-xl text-gray-100">
+                  AÑADIR AL CARRITO
+                </button>
+                
               </div>
             </div>
   )

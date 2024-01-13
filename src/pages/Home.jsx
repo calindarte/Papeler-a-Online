@@ -4,10 +4,7 @@ import imgGallery2 from "../images/gallery/School_Stationery_English_Pencils_Bal
 import imgGallery3 from "../images/gallery/School_Stationery_Pencils_Ballpoint_pen_568792_1365x1024.jpg";
 import imgGallery4 from "../images/gallery/School_Stationery_Wood_planks_Notebooks_Pencils_561709_1280x914.jpg";
 
-import imgCategory1 from "../images/category/office-material_6383909.png";
-import imgCategory2 from "../images/category/painting_11549589.png";
-import imgCategory3 from "../images/category/school-material_4693696.png";
-import imgCategory4 from "../images/category/stationery_7726943.png";
+
 
 import imgOptionIcon1 from "../images/optionIcon/headset_5790618.png";
 import imgOptionIcon2 from "../images/optionIcon/online-shopping_3081559.png";
@@ -75,12 +72,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="flex col-span-4 gap-x-14 px-20 py-16 justify-center">
-          <CardCategory text="ELEMENTOS DE OFICINA" url={imgCategory1} />
-          <CardCategory text="PRODUCTOS DE PAPELERIA" url={imgCategory4} />
-          <CardCategory text="UTILES ESCOLARES" url={imgCategory3} />
-          <CardCategory text="PRODUCTOS DE ARTE" url={imgCategory2} />
-        </div>
+      <CardCategory />
       </section>
       <section className="bg-[#f5f5f5]">
         <div>
