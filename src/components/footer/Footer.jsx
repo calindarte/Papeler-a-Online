@@ -8,7 +8,7 @@ import imgInstagram from "../../images/redesSociales/instagram_4494468.png";
 const Footer = () => {
   return (
     <footer className="bg-green-600">
-      <div className="flex  items-center justify-center py-16 px-10 gap-4 border-b border-gray-800  ">
+      <div className="flex  items-center justify-center py-16 px-10 gap-4 border-b border-gray-800 text-gray-9500 ">
         <div>
           <img src={logoHeader} alt="Logo" className="w-48" />
         </div>

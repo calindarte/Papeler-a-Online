@@ -3,14 +3,14 @@ import InputForm from "../components/sectionContact/InputForm";
 const Contact = () => {
   return (
     <div>
-      <div className="bg-amber-500 bg-opacity-70">
+      <div className="bg-amber-200 bg-opacity-60">
         <div className="pb-20 pt-24">
-          <h1 className="text-4xl font-semibold text-gray-100 text-center">
+          <h1 className="text-4xl font-semibold text-gray-700 text-center">
             Contáctanos
           </h1>
         </div>
       </div>
-      <div className="bg-opacity-70 bg-gray-900 text-gray-100 pb-24">
+      <div className="bg-opacity-70 bg-black text-gray-100 pb-24 shadow-2xl">
         <div className="flex items-center flex-col">
           <div className="pt-24">
             <h2 className="text-4xl font-bold text-gray-100">

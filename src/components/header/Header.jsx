@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-8 py-5 shadow-sm bg-gray-50">
+    <header className="flex items-center justify-between px-8 py-5 shadow-sm border bg-gray-50">
       <div className="flex items-center gap-x-4">
         <div className="">
           <img src={logoHeader} alt="Logo" className="size-20" />
