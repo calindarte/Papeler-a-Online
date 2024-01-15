@@ -1,34 +1,38 @@
 import { useState } from "react"
-import { auth, db } from "../config/firebase";
+import { db } from "../config/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
  
 
 
-export const useFirestore = () =>{
+export const useFirestore = () => {
 
     const [data, setData] = useState([])
     const [error, setError] =useState();
     const [loading, setLoading] = useState({});
 
-    const getData = async () =>{
+    const getData = async (category = null) => {
         try {
-            setLoading((prev) => ({...prev, getData:true}))
-            const dataRef = collection(db,'products')
-            const q =  query(dataRef, where('uid', '==', auth.currentUser.uid))
-            const querySnapshot = await getDocs(q)
-            const dataDB = querySnapshot.docs.map( doc => doc.data())
-            setData(dataDB)
-            
+          setLoading((prev) => ({ ...prev, getData: true }));
+          const dataRef = collection(db, "products");
+          let dataQuery;
+    
+          if (category) {
+            dataQuery = query(dataRef, where("categoria", "==", category));
+          } else {
+            dataQuery = dataRef;
+          }
+    
+          const querySnapshot = await getDocs(dataQuery);
+          const dataDB = querySnapshot.docs.map((doc) => doc.data());
+          setData(dataDB);
         } catch (error) {
-            console.log(error)
-            setError(error.message)
-            
-        } finally{
-            setLoading(prev => ({...prev, getData:false}))
-
+          console.log(error);
+          setError(error.message);
+        } finally {
+          setLoading((prev) => ({ ...prev, getData: false }));
         }
+      };
 
-    }
     return {
         data, error, loading, getData
 

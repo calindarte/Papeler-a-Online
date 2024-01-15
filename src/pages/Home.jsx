@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import imgGallery1 from "../images/gallery/School_Holidays_Stationery_Happy_Teacher_'s_Day_571034_1280x853.jpg";
 import imgGallery2 from "../images/gallery/School_Stationery_English_Pencils_Ballpoint_pen_568795_1280x853.jpg";
 import imgGallery3 from "../images/gallery/School_Stationery_Pencils_Ballpoint_pen_568792_1365x1024.jpg";
@@ -23,11 +23,21 @@ const Home = () => {
   const [index, setIndex] = useState(0);
 
   const handleNext = () => {
-    index === ARRAY_IMGS.length - 1 ? setIndex(0) : setIndex(index + 1);
+    setIndex((prevIndex) => (prevIndex + 1) % ARRAY_IMGS.length);
   };
+
   const handlePre = () => {
-    index === 0 ? setIndex(ARRAY_IMGS.length - 1) : setIndex(index - 1);
+    setIndex((prevIndex) =>
+      prevIndex === 0 ? ARRAY_IMGS.length - 1 : prevIndex - 1
+    );
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(handleNext, 8000);
+
+    return () => clearInterval(intervalId);
+  }, []); 
+  
 
   return (
     <div>
