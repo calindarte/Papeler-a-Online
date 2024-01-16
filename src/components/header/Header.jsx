@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import logoHeader from "../../images/logoPapeleria.png";
 import NavBar from "./NavBar";
 
+// import SearchProduct from "./searchProduct";
+
 const Header = () => {
+
+
   return (
     <header className="flex items-center justify-between px-8 py-5 shadow-sm border bg-gray-50">
       <div className="flex items-center gap-x-4">
@@ -16,23 +20,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <form className="flex items-center justify-center">
-          <input
-            type="text"
-            placeholder="Buscar un Producto"
-            className="w-80 border border-slate-400 px-2 py-1 rounded-lg focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
-          />
-          <div className="px-2 py-1">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-600 px-6 py-1 rounded-lg flex"
-            >
-              <span className="material-symbols-outlined text-white">
-                search
-              </span>
-            </button>
-          </div>
-        </form>
+        {/* <SearchProduct onSearch=''/> */}
       </div>
       <div className="flex items-center ">
         <NavBar />

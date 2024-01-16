@@ -4,8 +4,12 @@ import RedesSociales from "./RedesSociales";
 import imgFacebook from "../../images/redesSociales/facebook_5968903.png";
 import imgWhatsapp from "../../images/redesSociales/whatsapp_4494470.png";
 import imgInstagram from "../../images/redesSociales/instagram_4494468.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+
+  
   return (
     <footer className="bg-green-600">
       <div className="flex  items-center justify-center py-16 px-10 gap-4 border-b border-gray-800 text-gray-9500 ">
@@ -36,10 +40,10 @@ const Footer = () => {
           <div className="w-36">
             <h2 className="font-medium">Menú</h2>
             <ul>
-              <li>Inicio</li>
-              <li>Tienda</li>
-              <li>Quiénes Somos</li>
-              <li>Contactenos</li>
+              <Link to='/' className="hover:text-gray-600"><li>Inicio</li></Link>
+              <Link to='/tienda' className="hover:text-gray-600"><li>Tienda</li></Link>
+              <Link to='/nosotros' className="hover:text-gray-600"><li>Quiénes Somos</li></Link>
+              <Link to='/contacto' className="hover:text-gray-600"><li>Contactenos</li></Link>
             </ul>
           </div>
           <div className="flex flex-col w-28 items-center ">

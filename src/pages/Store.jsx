@@ -3,15 +3,22 @@ import CardBestSellers from "../components/sectionHome/CardBestSellers";
 import CardCategory from "../components/sectionHome/CardCategory";
 import HeaderStore from "../components/sectionStore/HeaderStore";
 
-
 import { useFirestore } from "../hooks/useFirestore";
+import SearchProduct from "../components/header/searchProduct";
 
 const Store = () => {
-  const {data, error, loading, getData } = useFirestore()
+  const { data, error, loading, getData, searchProduct, filteredData } =
+    useFirestore();
+
+  const handleSearch = (productName) => {
+    console.log(productName);
+    // Lógica de búsqueda aquí (puedes llamar a la función searchProduct del hook)
+    searchProduct(productName);
+  };
 
   useEffect(() => {
     console.log("get data");
-    getData()
+    getData();
   }, []);
 
   if (loading.getData) return <p>loading...</p>;
@@ -31,23 +38,37 @@ const Store = () => {
             Los artículos de papelería en la ciudad de Valledupar
           </span>
         </div>
-        <div className="grid grid-cols-4  gap-12 px-32  py-6">
-        {
-          data.map((item) => (
-            <div key={item.id} >
-            <CardBestSellers
-            imgProduct={item.imagen}
-            text={item.nombre}
-            price={item.precio}
-          />
+
+        <div className="flex flex-col">
+          <div className="">
+            <SearchProduct onSearch={handleSearch} />
+          </div>
+
+          <div className="grid grid-cols-4  gap-12 px-10  py-6">
+
+
             
-            </div>
-          ))
-        }
-
+            {filteredData.length > 0
+              ? filteredData.map((item) => (
+                  <div key={item.id}>
+                    <CardBestSellers
+                      imgProduct={item.imagen}
+                      text={item.nombre}
+                      price={item.precio}
+                    />
+                  </div>
+                ))
+              : data.map((item) => (
+                  <div key={item.id}>
+                    <CardBestSellers
+                      imgProduct={item.imagen}
+                      text={item.nombre}
+                      price={item.precio}
+                    />
+                  </div>
+                ))}
+          </div>
         </div>
-
-
 
         <div>
           <p>Paginacion...</p>

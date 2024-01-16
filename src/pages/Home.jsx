@@ -4,18 +4,15 @@ import imgGallery2 from "../images/gallery/School_Stationery_English_Pencils_Bal
 import imgGallery3 from "../images/gallery/School_Stationery_Pencils_Ballpoint_pen_568792_1365x1024.jpg";
 import imgGallery4 from "../images/gallery/School_Stationery_Wood_planks_Notebooks_Pencils_561709_1280x914.jpg";
 
-
-
 import imgOptionIcon1 from "../images/optionIcon/headset_5790618.png";
 import imgOptionIcon2 from "../images/optionIcon/online-shopping_3081559.png";
 import imgOptionIcon3 from "../images/optionIcon/package_1007888.png";
 
-import imgProduct1 from "../images/5646252.jpg";
 
 import CardCategory from "../components/sectionHome/CardCategory";
-import CardBestSellers from "../components/sectionHome/CardBestSellers";
 import CardTestimony from "../components/sectionHome/CardTestimony";
 import CardOptions from "../components/sectionHome/CardOptions";
+import BestSellersCarousel from "../components/sectionHome/BestSellersCarousel";
 
 const ARRAY_IMGS = [imgGallery1, imgGallery2, imgGallery3, imgGallery4];
 
@@ -36,8 +33,7 @@ const Home = () => {
     const intervalId = setInterval(handleNext, 8000);
 
     return () => clearInterval(intervalId);
-  }, []); 
-  
+  }, []);
 
   return (
     <div>
@@ -69,12 +65,12 @@ const Home = () => {
           {ARRAY_IMGS.map((_, i) => (
             <div
               key={i}
-              className={`relative bg-gray-900 h-3 w-3 rounded-full cursor-pointer`}
+              className={`relative bg-gray-400 h-3 w-3 rounded-full cursor-pointer overflow-hidden`}
               onClick={() => setIndex(i)}
             >
               <span
-                className={`absolute h-full w-full top-0 hover:bg-[rgba(255,255,255,0.5)] ${
-                  i === index && " bg-[rgba(255,255,255,0.5)]"
+                className={`absolute h-full w-full top-0 hover:bg-gray-900 ${
+                  i === index && " bg-gray-900"
                 }`}
               ></span>
             </div>
@@ -82,63 +78,13 @@ const Home = () => {
         </div>
       </section>
       <section>
-      <CardCategory />
+        <CardCategory />
       </section>
-      <section className="bg-[#f5f5f5]">
-        <div>
-          <div className="flex flex-col justify-center items-center gap-6 p-10 ">
-            <h2 className="font-mono text-5xl">Más Vendidos</h2>
-            <p className="text-lg text-gray-500">
-              Los artículos de papelería más comprados
-            </p>
-          </div>
-          <div className="flex col-span-4 gap-x-6 px-20 justify-center relative">
-            <CardBestSellers
-              imgProduct={imgProduct1}
-              text="Dolore nostrud proident sunt aliqua officia qui id anim anim eu pariatur."
-              price="$11,500 - $6,000"
-            />
-            <CardBestSellers
-              imgProduct={imgProduct1}
-              text="Dolore nostrud proident sunt aliqua officia qui id anim anim eu pariatur."
-              price="$11,500 - $6,000"
-            />
-            <CardBestSellers
-              imgProduct={imgProduct1}
-              text="Dolore nostrud proident sunt aliqua officia qui id anim anim eu pariatur."
-              price="$11,500 - $6,000"
-            />
-            <CardBestSellers
-              imgProduct={imgProduct1}
-              text="Dolore nostrud proident sunt aliqua officia qui id anim anim eu pariatur."
-              price="$11,500 - $6,000"
-            />
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 flex items-center justify-between w-full px-4">
-              <button
-                className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
-                onClick={handlePre}
-              >
-                <span className="material-symbols-outlined text-white">
-                  arrow_back_ios
-                </span>
-              </button>
-              <button
-                className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
-                onClick={handleNext}
-              >
-                <span className="material-symbols-outlined text-white">
-                  arrow_forward_ios
-                </span>
-              </button>
-            </div>
-          </div>
-          <div className="text-center py-20">
-            <button className="bg-green-700 px-16 py-2 rounded-full text-gray-100 tracking-wider ">
-              VER TODOS
-            </button>
-          </div>
-        </div>
-      </section>
+      
+       <BestSellersCarousel />
+
+        
+      
       <section className="bg-Lapices-home bg-repeat-round ">
         <div className="py-24 flex justify-center">
           <div className="flex flex-col gap-y-6 bg-white px-14 py-10 w-[35%] rounded-lg">
@@ -192,18 +138,21 @@ const Home = () => {
             parrafo="¡ESTAMOS PARA SERVIRTE!"
             textButton="HABLEMOS!"
             color="green"
+            path="/"
           />
           <CardOptions
             url={imgOptionIcon2}
             parrafo="¿COMO COMPRAR EN LA MODERNA?"
             textButton="VER MÁS"
             color="pink"
+            path="/"
           />
           <CardOptions
             url={imgOptionIcon3}
             parrafo="CONOCE NUESVOS PRODUCTOS"
             textButton="AQUÍ"
             color="yellow"
+            path="/tienda"
           />
         </div>
       </section>
