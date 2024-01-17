@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import logoHeader from "../../images/logoPapeleria.png";
 import NavBar from "./NavBar";
 
-// import SearchProduct from "./searchProduct";
-
 const Header = () => {
-
 
   return (
     <header className="flex items-center justify-between px-8 py-5 shadow-sm border bg-gray-50">
@@ -19,19 +16,18 @@ const Header = () => {
           <p className="font-normal tracking-widest text-center text-red-500">Papelería</p>
         </div>
       </div>
-      <div>
-        {/* <SearchProduct onSearch=''/> */}
-      </div>
+
+
       <div className="flex items-center ">
         <NavBar />
       
+    
       <div className="flex gap-x-2 px-6 items-center">
         <Link to="/cuenta">
           <span className="material-symbols-outlined flex">account_circle</span>
         </Link>
         <span className="material-symbols-outlined">shopping_cart</span>
       </div>
-    
       </div>
     </header>
   );

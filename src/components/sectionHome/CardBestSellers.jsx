@@ -21,8 +21,8 @@ const Precio = ({ precio }) => {
 const CardBestSellers = ({ imgProduct, text, price }) => {
   return (
     <div className="rounded-xl bg-slate-50 overflow-hidden">
-       <div className="w-full bg-white flex justify-center">
-        <img src={imgProduct} alt="" className="aspect-[8/8]  object-contain transition-transform transform hover:scale-105" />
+       <div className="w-full bg-white flex justify-center aspect-[8/8]">
+        <img src={imgProduct} alt="" className="  object-contain transition-transform transform hover:scale-105" />
 
        </div>
 

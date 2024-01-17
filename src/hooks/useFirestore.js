@@ -11,6 +11,9 @@ export const useFirestore = () => {
     const [loading, setLoading] = useState({});
 
     const [filteredData, setFilteredData] = useState([]);
+    
+
+
 
 
     const getData = async (category = null) => {
@@ -28,6 +31,8 @@ export const useFirestore = () => {
         const querySnapshot = await getDocs(dataQuery);
         const dataDB = querySnapshot.docs.map((doc) => doc.data());
         setData(dataDB);
+        // setFilteredData(dataDB);
+
       } catch (error) {
         console.log(error);
         setError(error.message);
@@ -41,14 +46,12 @@ export const useFirestore = () => {
           setLoading((prev) => ({ ...prev, searchProduct: true }));
     
           if (productName) {
-            const results = data.filter(
-              (product) =>
-                product.nombre.toLowerCase().startsWith(productName.toLowerCase())
-            );
+            const results = data.filter((product) => (product.nombre.toLowerCase().startsWith(productName.toLowerCase())
+            ));
             setFilteredData(results);
             
           } else {
-            setFilteredData([]);
+            setFilteredData(data);
             
           }
         } catch (error) {
@@ -58,10 +61,34 @@ export const useFirestore = () => {
           setLoading((prev) => ({ ...prev, searchProduct: false }));
         }
       };
+
+      const orderData = (order) => {
+        try {
+          setLoading((prev) => ({ ...prev, orderData: true }));
     
+          const orderData = [...data].sort((a, b) => {
+            if (order === "asc") {
+              return a.precio - b.precio;
+            } else if (order === "desc") {
+              return b.precio - a.precio;
+            }
+            return 0;
+          });
+    
+          setFilteredData(orderData);  // Cambia setData por setFilteredData
+        } catch (error) {
+          console.log(error);
+          setError(error.message);
+        } finally {
+          setLoading((prev) => ({ ...prev, orderData: false }));
+        }
+      };
+      
+      
+
 
     return {
-        data, error, loading, getData, searchProduct, filteredData
+        data, error, loading, getData, searchProduct, filteredData, orderData
 
     }
 }

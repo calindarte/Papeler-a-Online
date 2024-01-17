@@ -80,12 +80,12 @@ const Home = () => {
       <section>
         <CardCategory />
       </section>
-      
-       <BestSellersCarousel />
 
-        
-      
-      <section className="bg-Lapices-home bg-repeat-round ">
+      <BestSellersCarousel />
+
+      <section
+        className="bg-Lapices-home bg-repeat-round "
+      >
         <div className="py-24 flex justify-center">
           <div className="flex flex-col gap-y-6 bg-white px-14 py-10 w-[35%] rounded-lg">
             <h2 className="text-left text-4xl text-gray-800 font-medium">

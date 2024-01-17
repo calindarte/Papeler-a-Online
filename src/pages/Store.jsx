@@ -1,28 +1,63 @@
-import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import CardBestSellers from "../components/sectionHome/CardBestSellers";
 import CardCategory from "../components/sectionHome/CardCategory";
 import HeaderStore from "../components/sectionStore/HeaderStore";
 
 import { useFirestore } from "../hooks/useFirestore";
-import SearchProduct from "../components/header/searchProduct";
+import FilterOrAllProducts from "../utils/FilterOrAllProducts";
 
 const Store = () => {
-  const { data, error, loading, getData, searchProduct, filteredData } =
-    useFirestore();
 
-  const handleSearch = (productName) => {
-    console.log(productName);
-    // Lógica de búsqueda aquí (puedes llamar a la función searchProduct del hook)
-    searchProduct(productName);
-  };
+  const location = useLocation();
+  const producto = new URLSearchParams(location.search).get("producto");
+  
+
+  const {
+    data,
+    error,
+    loading,
+    getData,
+    searchProduct,
+    filteredData,
+    orderData,
+  } = useFirestore();
+  const [selectedOrder, setSelectedOrder] = useState("");
+
+
+  const totalBusqueda = filteredData.length;
+  const totalData = data.length;
+
 
   useEffect(() => {
     console.log("get data");
     getData();
   }, []);
 
-  if (loading.getData) return <p>loading...</p>;
+  useEffect(() => {
+    orderData(selectedOrder);
+  }, [selectedOrder]);
+
+  useEffect(() => {
+    if (producto) {
+      searchProduct(producto);
+    }
+  }, [producto]);
+
+  if (loading.getData) return <p>loading school...</p>;
+  if (loading.orderData) return <p>loading orderData...</p>;
+
   if (error) return <p>{error}</p>;
+
+  const handleSearch = (productName) => {
+    
+    searchProduct(productName);
+  };
+
+  const handleChangeOrder = (newOrder) => {
+    setSelectedOrder(newOrder);
+  };
+
 
   return (
     <>
@@ -40,14 +75,14 @@ const Store = () => {
         </div>
 
         <div className="flex flex-col">
-          <div className="">
-            <SearchProduct onSearch={handleSearch} />
-          </div>
-
+          <FilterOrAllProducts
+            onChangeOrder={handleChangeOrder}
+            onSearch={handleSearch}
+            totalBusqueda={totalBusqueda}
+            totalData={totalData}
+   
+          />
           <div className="grid grid-cols-4  gap-12 px-10  py-6">
-
-
-            
             {filteredData.length > 0
               ? filteredData.map((item) => (
                   <div key={item.id}>
@@ -68,10 +103,6 @@ const Store = () => {
                   </div>
                 ))}
           </div>
-        </div>
-
-        <div>
-          <p>Paginacion...</p>
         </div>
       </section>
     </>

@@ -8,20 +8,28 @@ const BestSellersCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);
 
   useEffect(() => {
-    console.log('best data');
     getData();
+    
   }, []);
 
   const handleNext = () => {
-    const nextIndex = startIndex + 4 < data.length ? startIndex + 4 : 0;
-    setStartIndex(nextIndex);
+    setStartIndex((prevIndex) => (prevIndex + 4 < data.length ? prevIndex + 4 : 0));
   };
 
   const handlePre = () => {
-    const nextIndex =
-      startIndex - 4 >= 0 ? startIndex - 4 : Math.floor(data.length / 4) * 4;
-    setStartIndex(nextIndex);
+    setStartIndex((prevIndex) =>
+      prevIndex - 4 >= 0 ? prevIndex - 4 : Math.floor(data.length / 4) * 4
+    );
   };
+
+  useEffect(() => {
+    console.log('avence automatico')
+    const intervalId = setInterval(() => {
+      handleNext();
+    }, 8000);
+
+    return () => clearInterval(intervalId);
+  }, [startIndex, data]);
 
   return (
     <section className="bg-[#f5f5f5]">
