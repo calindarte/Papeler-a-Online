@@ -30,7 +30,7 @@ const InfoAccount = () => {
             </li>
             <NavBarAccount/>
           
-            {/* <button onClick={handleLogOut} className="cursor-pointer ">Salir</button> */}
+            
         </div>
       </div>
     </div>

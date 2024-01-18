@@ -25,9 +25,17 @@ const NavBarAccount = () => {
     const handleLogOut = async () => {
         try {
           await logOut();
+          scrollToTop()
         } catch (error) {
           console.log(error);
         }
+      };
+
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       };
   return (
     <nav className="flex flex-col gap-y-1 py-2 px-4 ">

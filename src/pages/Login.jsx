@@ -12,8 +12,17 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       navigate("/");
+      scrollToTop()
+
     }
   }, [user]);
+  
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const onSubmit = async (
     { email, password },

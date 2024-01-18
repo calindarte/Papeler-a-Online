@@ -1,19 +1,6 @@
 import { Link } from "react-router-dom";
 import imgStar from "../../images/stars/vecteezy_5-star-rating-review-star-png-transparent_9663927.png";
-
-const Precio = ({ precio }) => {
-  const formatoPrecio = new Intl.NumberFormat("es-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-  });
-
-  return (
-    <span className="text-gray-700 font-medium">
-      {formatoPrecio.format(precio)}
-    </span>
-  );
-};
+import Price from "./Price";
 
 const CardBestSellers = ({ imgProduct, text, price, item }) => {
   return (
@@ -35,7 +22,7 @@ const CardBestSellers = ({ imgProduct, text, price, item }) => {
           <span>
             <img src={imgStar} alt="star" className="w-28 h-4 object-cover" />
           </span>
-          <Precio precio={price} />
+          <Price precio={price} />
         </div>
 
         <div className="flex flex-col text-sm gap-y-4 py-4 ">

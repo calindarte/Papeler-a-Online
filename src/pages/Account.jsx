@@ -6,6 +6,13 @@ const Account = () => {
 
   const { user } = useUserContext();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
 
 
   return (
@@ -24,12 +31,12 @@ const Account = () => {
             </span>
           </div>
           <div className="flex gap-7 ">
-            <Link to="/cuenta/login">
+            <Link to="/cuenta/login" onClick={scrollToTop}>
               <button className="bg-blue-500 px-10 py-3 rounded-full text-gray-100 font-medium ">
                 Acceder
               </button>
             </Link>
-            <Link to="/cuenta/register">
+            <Link to="/cuenta/register" onClick={scrollToTop}>
             <button className="bg-yellow-500 px-7 py-3 rounded-full text-gray-100 font-medium ">
               Registrarse
             </button>

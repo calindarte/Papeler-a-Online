@@ -2,8 +2,15 @@ import { Link } from "react-router-dom";
 
 import logoHeader from "../../images/logoPapeleria.png";
 import NavBar from "./NavBar";
+import { useState } from "react";
+import CartHeader from "./CartHeader";
+import { useUserContext } from "../../context/UserContext";
 
 const Header = () => {
+  const {totalQuantityProduct} = useUserContext()
+  const [isOpenCart,setIsOpenCart]=useState(false)
+
+
 
   return (
     <header className="flex items-center justify-between px-8 py-5 shadow-sm border bg-gray-50">
@@ -22,11 +29,25 @@ const Header = () => {
         <NavBar />
       
     
-      <div className="flex gap-x-2 px-6 items-center">
+      <div className="flex gap-x-2 px-6">
         <Link to="/cuenta">
-          <span className="material-symbols-outlined flex">account_circle</span>
+          <span className="material-symbols-outlined flex ">account_circle</span>
         </Link>
-        <span className="material-symbols-outlined">shopping_cart</span>
+        
+          <button 
+          onClick={()=>{setIsOpenCart(!isOpenCart)}}
+          className="relative"
+          >
+            <span className="material-symbols-outlined flex items-center">shopping_cart</span>
+
+            <span className="absolute -top-3 -right-2 bg-orange-600 text-white text-xs font-bold px-2 rounded-full">{totalQuantityProduct}</span>
+          </button>
+          {
+            isOpenCart && <CartHeader setIsOpenCart={setIsOpenCart} isOpenCart={isOpenCart}/>
+          }
+          
+          
+      
       </div>
       </div>
     </header>
