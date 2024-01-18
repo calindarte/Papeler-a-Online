@@ -51,6 +51,7 @@ const BestSellersCarousel = () => {
                   imgProduct={item.imagen}
                   text={item.nombre}
                   price={item.precio}
+                  item={item.id}
                 />
               </div>
             ))

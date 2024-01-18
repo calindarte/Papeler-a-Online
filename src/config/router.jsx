@@ -13,6 +13,7 @@ import ArtItems from "../pages/ArtItems";
 import LayoutAccount from "../layout/LayoutAccount";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import ProductDetails from "../pages/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
           {
             path: "/tienda/arte",
             element: <ArtItems /> ,
+          },
+          {
+            path: "/tienda/producto/:id",
+            element: <ProductDetails />,
           },
         ],
       },

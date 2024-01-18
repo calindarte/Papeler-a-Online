@@ -8,10 +8,8 @@ import { useFirestore } from "../hooks/useFirestore";
 import FilterOrAllProducts from "../utils/FilterOrAllProducts";
 
 const Store = () => {
-
   const location = useLocation();
   const producto = new URLSearchParams(location.search).get("producto");
-  
 
   const {
     data,
@@ -24,10 +22,8 @@ const Store = () => {
   } = useFirestore();
   const [selectedOrder, setSelectedOrder] = useState("");
 
-
   const totalBusqueda = filteredData.length;
   const totalData = data.length;
-
 
   useEffect(() => {
     console.log("get data");
@@ -50,14 +46,12 @@ const Store = () => {
   if (error) return <p>{error}</p>;
 
   const handleSearch = (productName) => {
-    
     searchProduct(productName);
   };
 
   const handleChangeOrder = (newOrder) => {
     setSelectedOrder(newOrder);
   };
-
 
   return (
     <>
@@ -80,26 +74,31 @@ const Store = () => {
             onSearch={handleSearch}
             totalBusqueda={totalBusqueda}
             totalData={totalData}
-   
           />
           <div className="grid grid-cols-4  gap-12 px-10  py-6">
             {filteredData.length > 0
               ? filteredData.map((item) => (
-                  <div key={item.id}>
+                  <div
+                    key={item.id}
+                  >
                     <CardBestSellers
                       imgProduct={item.imagen}
                       text={item.nombre}
                       price={item.precio}
+                      item={item.id}
                     />
+                    
                   </div>
                 ))
               : data.map((item) => (
-                  <div key={item.id}>
+                  <div key={item.id} >
                     <CardBestSellers
                       imgProduct={item.imagen}
                       text={item.nombre}
                       price={item.precio}
+                      item={item.id}
                     />
+                    
                   </div>
                 ))}
           </div>

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { db } from "../config/firebase";
-import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, orderBy, query, where } from "firebase/firestore";
  
 
 
@@ -11,9 +11,7 @@ export const useFirestore = () => {
     const [loading, setLoading] = useState({});
 
     const [filteredData, setFilteredData] = useState([]);
-    
-
-
+    const [product, setProduct] =useState([])
 
 
     const getData = async (category = null) => {
@@ -40,6 +38,7 @@ export const useFirestore = () => {
         setLoading((prev) => ({ ...prev, getData: false }));
       }
     };
+
 
       const searchProduct = (productName) => {
         try {
@@ -75,7 +74,7 @@ export const useFirestore = () => {
             return 0;
           });
     
-          setFilteredData(orderData);  // Cambia setData por setFilteredData
+          setFilteredData(orderData); 
         } catch (error) {
           console.log(error);
           setError(error.message);
@@ -83,12 +82,35 @@ export const useFirestore = () => {
           setLoading((prev) => ({ ...prev, orderData: false }));
         }
       };
+    
+
+      const getProductById = async (id) => {
+        try {
+          setLoading((prev) => ({ ...prev, getProductById: true }));
+
+        const docRef = doc(db,"products",id)
+        const docSnap = await getDoc(docRef);
+        
+          const idproduct = docSnap.data()
+          setProduct(idproduct);
+        
+          
+        } catch (error) {
+          console.error(error);
+          setError(error.message);
+        } finally {
+          setLoading((prev) => ({ ...prev, getProductById: false }));
+        }
+      };
+      
+     
+    
       
       
 
 
     return {
-        data, error, loading, getData, searchProduct, filteredData, orderData
+        data, error, loading, getData, searchProduct, filteredData, orderData, getProductById, product
 
     }
 }

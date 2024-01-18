@@ -63,6 +63,7 @@ const SchoolItems = () => {
                     imgProduct={item.imagen}
                     text={item.nombre}
                     price={item.precio}
+                    item={item.id}
                   />
                 </div>
               ))
@@ -72,6 +73,7 @@ const SchoolItems = () => {
                     imgProduct={item.imagen}
                     text={item.nombre}
                     price={item.precio}
+                    item={item.id}
                   />
                 </div>
               ))}

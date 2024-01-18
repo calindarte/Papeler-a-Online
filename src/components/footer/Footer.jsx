@@ -7,9 +7,13 @@ import imgInstagram from "../../images/redesSociales/instagram_4494468.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-
-  
   return (
     <footer className="bg-green-600">
       <div className="flex  items-center justify-center py-16 px-10 gap-4 border-b border-gray-800 text-gray-9500 ">
@@ -23,11 +27,11 @@ const Footer = () => {
 
         <div className="px-4">
           <p>
-            Bienvenido a nuestra papelería, tu destino para
-            todo lo relacionado con papelería. Descubre una selección única de
-            productos para la escuela, la oficina y proyectos creativos. Nuestro
-            amable personal está listo para ayudarte a encontrar lo que
-            necesitas. ¡Esperamos verte pronto!
+            Bienvenido a nuestra papelería, tu destino para todo lo relacionado
+            con papelería. Descubre una selección única de productos para la
+            escuela, la oficina y proyectos creativos. Nuestro amable personal
+            está listo para ayudarte a encontrar lo que necesitas. ¡Esperamos
+            verte pronto!
           </p>
         </div>
 
@@ -40,10 +44,29 @@ const Footer = () => {
           <div className="w-36">
             <h2 className="font-medium">Menú</h2>
             <ul>
-              <Link to='/' className="hover:text-gray-600"><li>Inicio</li></Link>
-              <Link to='/tienda' className="hover:text-gray-600"><li>Tienda</li></Link>
-              <Link to='/nosotros' className="hover:text-gray-600"><li>Quiénes Somos</li></Link>
-              <Link to='/contacto' className="hover:text-gray-600"><li>Contactenos</li></Link>
+              <li>
+                <Link to="/" className="hover:text-gray-600" onClick={scrollToTop}>
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                
+                <Link to="/tienda" className="hover:text-gray-600" onClick={scrollToTop}>
+                  Tienda
+                </Link>
+              </li>
+              <li>
+               
+                <Link to="/nosotros" className="hover:text-gray-600" onClick={scrollToTop}>
+                  Quiénes Somos
+                </Link>
+              </li>
+              <li>
+                
+                <Link to="/contacto" className="hover:text-gray-600" onClick={scrollToTop}>
+                  Contactenos
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="flex flex-col w-28 items-center ">
