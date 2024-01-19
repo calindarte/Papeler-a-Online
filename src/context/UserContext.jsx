@@ -45,11 +45,19 @@ export default function UserContextProvider ({children}) {
         setCartProduct(cartProduct.filter((item)=> item.id !== id))
     }
 
+    const calculateTotalPrice = () => {
+      const totalPrice = cartProduct.reduce(
+        (acc, current) => acc + current.quantity * current.precio,
+        0
+      );
+      return totalPrice;
+    };
+
     const totalQuantityProduct = cartProduct.reduce((acc,current) => current.quantity + acc, 0) ;
 
 
     return (
-    <UserContext.Provider value={{user, cartProduct, addCartProduct, deleteCartProduct, totalQuantityProduct}} >
+    <UserContext.Provider value={{user, cartProduct, addCartProduct, deleteCartProduct, totalQuantityProduct, calculateTotalPrice}} >
         {children}
     </UserContext.Provider>
     );

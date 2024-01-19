@@ -2,7 +2,7 @@ import { useUserContext } from "../../context/UserContext";
 import Price from "../sectionHome/Price";
 
 const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
-  const { cartProduct, deleteCartProduct } = useUserContext();
+  const { cartProduct, deleteCartProduct, calculateTotalPrice } = useUserContext();
   return (
     <div className="fixed top-0 left-0 bg-black/70 w-full h-full z-10">
       <section className="absolute right-0 top-0 w-[30%] z-10 bg-gray-50 h-full shadow-xl">
@@ -51,7 +51,7 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
             <div className="px-4">
                 <div>
                     <p>Subtotal: <span>
-                    <Price precio={20} />
+                    <Price precio={calculateTotalPrice()} />
                   </span></p>
                 </div>
               <button className="bg-orange-600 hover:bg-orange-700 transition-all text-white rounded-md py-4 w-full">

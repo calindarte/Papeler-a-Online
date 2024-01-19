@@ -1,6 +1,12 @@
+import { useState } from "react";
 import InputForm from "../components/sectionContact/InputForm";
 
 const Contact = () => {
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [mensaje, setMensaje] = useState("");
+
   return (
     <div>
       <div className="bg-amber-200 bg-opacity-60">
@@ -17,12 +23,34 @@ const Contact = () => {
               Enviar Un Mensaje
             </h2>
           </div>
-          <form className="flex flex-col  gap-3 pt-10  w-[45%] text-xl">
-            <InputForm type="text" id="nombre" label="Su nombre" />
+          <form
+            className="flex flex-col  gap-3 pt-10  w-[45%] text-xl"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <InputForm
+              type="text"
+              id="nombre"
+              label="Su nombre"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
+            <InputForm
+              type="email"
+              id="email"
+              label="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-            <InputForm type="email" id="email" label="Email" />
-
-            <InputForm type="tel" id="telefono" label="Número de teléfono" />
+            <InputForm
+              type="tel"
+              id="telefono"
+              label="Número de teléfono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+            />
 
             <label htmlFor="mensaje">Mensaje</label>
             <textarea
@@ -30,9 +58,16 @@ const Contact = () => {
               cols="30"
               rows="3"
               className="focus:outline-none p-2 bg-transparent border-b-2 border-amber-600 text-lg tracking-wide text-gray-200"
+              value={mensaje}
+              onChange={(e) => setMensaje(e.target.value)}
             />
 
-            <button className="bg-amber-500 bg-opacity-70 p-2 rounded-md mt-2">Enviar mensaje</button>
+            <button
+              type="submit"
+              className="bg-amber-500 bg-opacity-70 p-2 rounded-md mt-2"
+            >
+              Enviar mensaje
+            </button>
           </form>
         </div>
       </div>

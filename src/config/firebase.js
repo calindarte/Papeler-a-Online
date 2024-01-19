@@ -29,3 +29,5 @@ export const register = ({email, password}) => {
 export const logOut = () => {
     return signOut(auth);
 }
+
+
