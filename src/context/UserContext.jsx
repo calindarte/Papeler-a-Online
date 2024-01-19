@@ -3,20 +3,27 @@ import { useContext, useEffect, useState, createContext } from "react";
 import { auth } from "../config/firebase";
 
 const UserContext = createContext();
+const inicialState = JSON.parse(localStorage.getItem('cart')) || [];
+
 
 export default function UserContextProvider ({children}) {
 
     const [user, setUser] = useState(false);
-    const [cartProduct, setCartProduct] = useState([]);
+    const [cartProduct, setCartProduct] = useState(inicialState);
 
     useEffect(()=> {
         console.log('useEffect en accion')
+
+    
+    localStorage.setItem('cart', JSON.stringify(cartProduct))
+
         const unsubscribe = onAuthStateChanged(auth, (user) =>{
             console.log(user)
             setUser(user)
         })
         return unsubscribe;
-    }, [])
+    }, [cartProduct])
+
     if (user === false) return <p>Loading...</p>
 
     const addCartProduct = (product) => {
@@ -36,13 +43,16 @@ export default function UserContextProvider ({children}) {
           // Agrega el producto al carrito si no está presente
           setCartProduct((prevCart) => [...prevCart, product]);
         }
-    
+        localStorage.setItem('cart', JSON.stringify(cartProduct));
         // Devuelve true si se agregó correctamente
         return true;
+        
       };
 
       const deleteCartProduct = (id)=>{
         setCartProduct(cartProduct.filter((item)=> item.id !== id))
+        localStorage.setItem('cart', JSON.stringify(cartProduct));
+
     }
 
     const calculateTotalPrice = () => {

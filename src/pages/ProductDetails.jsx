@@ -2,20 +2,25 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useFirestore } from "../hooks/useFirestore";
 import Price from "../components/sectionHome/Price";
+import Swal from "sweetalert2";
 
 import imgWhatsapp from "../images/redesSociales/Logo Whatsapp PNG.jpg";
 import { useUserContext } from "../context/UserContext";
+import BestSellersCarousel from "../components/sectionHome/BestSellersCarousel";
 
 const ProductDetails = () => {
 
-  const {addCartProduct} = useUserContext()
   const { id } = useParams();
   const whatsappNumber="3014782097"; 
-
+  
+  const {addCartProduct} = useUserContext()
 
   const { error, getProductById, loading, product } = useFirestore();
 
   const [count, setCount] = useState(0);
+
+
+
   const decrementCount = () => {
     if (count === 0) return;
     setCount(count - 1);
@@ -23,7 +28,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     getProductById(id);
-  }, []);
+  }, [id]);
 
   if (loading.getProductById) return <p>Cargando detalles del producto...</p>;
 
@@ -38,12 +43,19 @@ const ProductDetails = () => {
       quantity: count === 0 ? 1 : count,
     });
     setCount(0);
-  };
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Añadido al carrito",
+      showConfirmButton: false,
+      timer: 1500,
+  });  };
   const mensajePredeterminado = `¡Hola! Quiero comprar el producto "${product.nombre}" de la categoría "${product.categoria}". ¿Cuál es el precio y la disponibilidad?`;
 
 
   return (
-    <div className="px-14 py-12 bg-[#f5f5f5]">
+    <div className="px-14 py-12 bg-[#f5f5f5] ">
+
       <div className="py-6">
         <ul className="flex gap-x-3 uppercase text-sm text-gray-900">
           <Link to="/" className="underline">
@@ -61,7 +73,9 @@ const ProductDetails = () => {
         </ul>
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-1 items-stretch shadow-lg">
+
+
+      <div className="grid grid-cols-2 grid-rows-1 items-stretch shadow-lg ">
         <div className="bg-white overflow-hidden flex justify-center items-center">
           <img
             src={product.imagen}
@@ -72,7 +86,7 @@ const ProductDetails = () => {
 
         <div className="bg-white border-l">
           <div className="flex flex-col gap-y-4 p-8">
-            <span className="uppercase text-green-500 font-medium tracking-widest  text-xl">
+            <span className="uppercase text-green-600 font-medium tracking-widest  text-xl">
               {product.categoria}
             </span>
             <p className="uppercase text-4xl">{product.nombre}</p>
@@ -80,7 +94,7 @@ const ProductDetails = () => {
               precio={product.precio}
               className="text-xl font-medium lining-nums text-gray-600"
             />
-            <span className="text-green-500 font-medium">{`${product.stock} disponibles`}</span>
+            <span className="text-green-600 font-medium">{`${product.stock} disponibles`}</span>
           </div>
 
           <div className="flex p-6 gap-x-8">
@@ -118,18 +132,18 @@ const ProductDetails = () => {
           </div>
 
           <div className="p-6 ">
-          <Link to={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(mensajePredeterminado)}`} target="_blank" rel="noopener noreferrer">
-            <button className="py-2 px-4 rounded-full bg-green-500 flex items-center gap-x-3">
+            <button className="py-2 px-4 rounded-full bg-green-500 ">
+          <Link to={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(mensajePredeterminado)}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-x-3">
               <img
                 src={imgWhatsapp}
                 alt="logo whatsapp "
                 className="rounded-full size-8"
               />
-              <p className="text-gray-200 uppercase font-medium text-sm">
+              <p className="text-gray-50 uppercase font-medium text-sm">
                 Comprar
               </p>
-            </button>
             </Link>
+            </button>
           </div>
 
           <div className="px-6 py-8 flex flex-col gap-y-4">
@@ -151,9 +165,17 @@ const ProductDetails = () => {
               </li>
             </ul>
           </div>
+          </div>
+
+          </div>
+
+          <div >
+            <BestSellersCarousel />
+          </div>
+
           
-        </div>
-      </div>
+        
+      
       {/* {product ? <p>{product.nombre}</p> : <p>No se encontró el producto con el ID: {id}</p>} */}
     </div>
   );

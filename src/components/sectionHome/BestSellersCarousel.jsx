@@ -10,6 +10,7 @@ const BestSellersCarousel = () => {
   useEffect(() => {
     getData();
     
+    
   }, []);
 
   const handleNext = () => {
@@ -52,6 +53,8 @@ const BestSellersCarousel = () => {
                   text={item.nombre}
                   price={item.precio}
                   item={item.id}
+                  product={item}
+                  onClick={onclick}
                 />
               </div>
             ))

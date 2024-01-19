@@ -64,6 +64,7 @@ const SchoolItems = () => {
                     text={item.nombre}
                     price={item.precio}
                     item={item.id}
+                    product={item}
                   />
                 </div>
               ))
@@ -74,6 +75,7 @@ const SchoolItems = () => {
                     text={item.nombre}
                     price={item.precio}
                     item={item.id}
+                    product={item}
                   />
                 </div>
               ))}

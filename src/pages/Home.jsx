@@ -124,10 +124,10 @@ const Home = () => {
       <section className="bg-gradient-to-b from-green-400 to-red-400">
         <div>
           <h2 className="text-center text-4xl py-14">Testimonio</h2>
-          <div className="flex items-center justify-center gap-8 px-24 pb-24">
-            <CardTestimony />
-            <CardTestimony />
-            <CardTestimony />
+          <div className="grid grid-cols-[4fr_4fr_4fr] gap-x-8 px-24 pb-24">
+            <CardTestimony title="La Moderna superó mis expectativas." descripcion="La variedad de productos y la facilidad de compra en línea hicieron que mi experiencia fuera excepcional. Definitivamente, volveré." nombre="Ana S." role="Cliente Satisfecha" />
+            <CardTestimony title="Como artista, La Moderna fue mi elección perfecta." descripcion="La amplia gama de suministros y la asistencia del equipo de atención al cliente hicieron que mi compra fuera inmejorable. ¡Estoy encantado con mi experiencia de compra!" nombre="Carlos M." role="Artista Creativo" />
+            <CardTestimony title="La Moderna es mi tienda de confianza para la organización escolar." descripcion="Desde útiles escolares hasta mochilas, encontré todo lo que necesitaba. La entrega rápida y eficiente hizo que mi vida fuera más fácil. ¡Recomiendo La Moderna a todas las madres ocupadas!" nombre="Isabel G." role="Organización Escolar" />
           </div>
         </div>
       </section>

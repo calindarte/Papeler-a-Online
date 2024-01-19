@@ -20,12 +20,16 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
           {cartProduct.length === 0 && (
             <p className="py-14 text-center">Tu carrito está vacío</p>
           )}
+          <div className="overflow-y-auto max-h-[460px]">
+
           {cartProduct.map((product) => (
             <article
               key={product.id}
-              className="grid grid-cols-[1fr_4fr_1fr] gap-6 px-4 py-4 items-center"
+              className="grid grid-cols-[1fr_4fr_1fr] gap-6 px-4 py-4 items-center text-sm border"
             >
-              <img src={product.imagen} alt="" />
+              <div className="bg-white">
+              <img src={product.imagen} alt=""  className="object-contain aspect-square"/>
+              </div>
               <div>
                 <h6 className="uppercase">{product.nombre}</h6>
 
@@ -46,19 +50,23 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
               </button>
             </article>
           ))}
+          </div>
+          <div className="bottom-0 absolute w-full">
+
           {cartProduct.length !== 0 && (
 
-            <div className="px-4">
+            <div className="p-4">
                 <div>
                     <p>Subtotal: <span>
                     <Price precio={calculateTotalPrice()} />
                   </span></p>
                 </div>
-              <button className="bg-orange-600 hover:bg-orange-700 transition-all text-white rounded-md py-4 w-full">
+              <button className="bg-orange-600 text-sm hover:bg-orange-700 transition-all text-white rounded-md py-4 w-full">
                 Finalizar Compra
               </button>
             </div>
           )}
+          </div>
         </div>
       </section>
     </div>

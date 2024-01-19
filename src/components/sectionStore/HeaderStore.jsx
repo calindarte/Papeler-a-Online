@@ -4,10 +4,10 @@ const HeaderStore = ({text='tienda', path='', parrafo=''}) => {
 
 
   return (
-    <div className="bg-green-600 text-gray-100 ">
+    <div className="bg-green-600 text-gray-200 ">
         <div className="py-16 px-12 flex flex-col justify-center items-center gap-4">
 
-        <h1 className="font-medium first-letter:uppercase">{text}</h1>
+        <h1 className="font-medium first-letter:uppercase text-gray-950 text-lg">{text}</h1>
         <div className="flex gap-2">
           <Link
             to="/"
