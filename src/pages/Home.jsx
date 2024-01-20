@@ -16,6 +16,9 @@ import BestSellersCarousel from "../components/sectionHome/BestSellersCarousel";
 
 const ARRAY_IMGS = [imgGallery1, imgGallery2, imgGallery3, imgGallery4];
 
+const whatsappNumber="3014782097"; 
+
+
 const Home = () => {
   const [index, setIndex] = useState(0);
 
@@ -138,21 +141,25 @@ const Home = () => {
             parrafo="¡ESTAMOS PARA SERVIRTE!"
             textButton="HABLEMOS!"
             color="green"
-            path="/"
+            path={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=Hola%20quiero%20comprar%20un%20producto`}
+            target="_blank"
+           
           />
           <CardOptions
             url={imgOptionIcon2}
             parrafo="¿COMO COMPRAR EN LA MODERNA?"
             textButton="VER MÁS"
             color="pink"
-            path="/"
+            path="/tienda"
+            
           />
           <CardOptions
             url={imgOptionIcon3}
-            parrafo="CONOCE NUESVOS PRODUCTOS"
+            parrafo="CONOCE NUEVOS PRODUCTOS"
             textButton="AQUÍ"
             color="yellow"
             path="/tienda"
+
           />
         </div>
       </section>
