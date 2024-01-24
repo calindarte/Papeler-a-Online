@@ -20,10 +20,19 @@ const Store = () => {
     filteredData,
     orderData,
   } = useFirestore();
+
   const [selectedOrder, setSelectedOrder] = useState("");
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const productosPorPagina = 16;
 
   const totalBusqueda = filteredData.length;
   const totalData = data.length;
+
+  const totalPages = Math.ceil(totalData / productosPorPagina);
+  const totalPagesFilter = Math.ceil(totalBusqueda / productosPorPagina);
+
 
   useEffect(() => {
     console.log("get data");
@@ -47,11 +56,26 @@ const Store = () => {
 
   const handleSearch = (productName) => {
     searchProduct(productName);
+    setCurrentPage(1);
   };
 
   const handleChangeOrder = (newOrder) => {
     setSelectedOrder(newOrder);
   };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
+ 
+
+  const startIndex = (currentPage - 1) * productosPorPagina;
+  const endIndex = startIndex + productosPorPagina;
+  const productsToShowData = data.slice(startIndex, endIndex);
+  const productsToShowFilterData = filteredData.slice(startIndex, endIndex);
 
   return (
     <>
@@ -77,10 +101,8 @@ const Store = () => {
           />
           <div className="grid grid-cols-4  gap-12 px-10  py-6">
             {filteredData.length > 0
-              ? filteredData.map((item) => (
-                  <div
-                    key={item.id}
-                  >
+              ? productsToShowFilterData.map((item) => (
+                  <div key={item.id}>
                     <CardBestSellers
                       imgProduct={item.imagen}
                       text={item.nombre}
@@ -88,11 +110,10 @@ const Store = () => {
                       item={item.id}
                       product={item}
                     />
-                    
                   </div>
                 ))
-              : data.map((item) => (
-                  <div key={item.id} >
+              : productsToShowData.map((item) => (
+                  <div key={item.id}>
                     <CardBestSellers
                       imgProduct={item.imagen}
                       text={item.nombre}
@@ -100,9 +121,29 @@ const Store = () => {
                       item={item.id}
                       product={item}
                     />
-                    
                   </div>
                 ))}
+          </div>
+
+          <div className="flex  justify-center gap-x-4 py-4">
+            <button
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+             
+            >
+              <span className="material-symbols-outlined ">
+                arrow_left_alt
+              </span>
+            </button>
+            <span>{`Página ${currentPage} de ${filteredData.length > 0 ? totalPagesFilter:totalPages}`}</span>
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === (filteredData.length > 0 ? totalPagesFilter:totalPages)}
+            >
+              <span className="material-symbols-outlined ">
+                arrow_right_alt
+              </span>
+            </button>
           </div>
         </div>
       </section>

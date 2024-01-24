@@ -7,6 +7,8 @@ const NavBar = () => {
         <NavLink path='/tienda' text='TIENDA'/>
         <NavLink path='/nosotros' text='SOBRE NOSOTROS'/>
         <NavLink path='/contacto' text='CONTACTENOS'/>
+        <NavLink path='/ayuda' text='AYUDA'/>
+
       </nav>
   )
 }

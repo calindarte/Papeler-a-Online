@@ -150,7 +150,7 @@ const Home = () => {
             parrafo="¿COMO COMPRAR EN LA MODERNA?"
             textButton="VER MÁS"
             color="pink"
-            path="/tienda"
+            path="/ayuda"
             
           />
           <CardOptions

@@ -14,6 +14,7 @@ import LayoutAccount from "../layout/LayoutAccount";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductDetails from "../pages/ProductDetails";
+import Help from "../pages/Help";
 
 
 export const router = createBrowserRouter([
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: "/contacto",
         element: <Contact />,
+      },
+      {
+        path:"/ayuda",
+        element: <Help/>,
       },
       {
         path: "/cuenta",

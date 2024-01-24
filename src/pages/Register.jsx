@@ -56,7 +56,7 @@ const Register = () => {
     
     <div className="container mx-auto py-20 px-64">
       <div className="flex flex-col gap-y-4 px-40 border py-20 shadow-xl rounded-md bg-slate-50 ">
-      <h1 className="text-center font-semibold">Register</h1>
+      <h1 className="text-center font-semibold uppercase">Registrarse</h1>
       <Formik
         onSubmit={onSubmit}
         initialValues={{ email: "", password: "" }}
