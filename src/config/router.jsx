@@ -15,7 +15,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProductDetails from "../pages/ProductDetails";
 import Help from "../pages/Help";
-
+import NotFound from "../pages/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -31,24 +31,24 @@ export const router = createBrowserRouter([
         element: <LayoutStore />,
         children: [
           {
-            index:true,
-            element: <Store/>,
+            index: true,
+            element: <Store />,
           },
           {
             path: "/tienda/oficina",
-            element: <OfficeItems/>,
+            element: <OfficeItems />,
           },
           {
             path: "/tienda/papeleria",
-            element: <PaperItems/> ,
+            element: <PaperItems />,
           },
           {
             path: "/tienda/escolar",
-            element: <SchoolItems /> ,
+            element: <SchoolItems />,
           },
           {
             path: "/tienda/arte",
-            element: <ArtItems /> ,
+            element: <ArtItems />,
           },
           {
             path: "/tienda/producto/:id",
@@ -65,26 +65,30 @@ export const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path:"/ayuda",
-        element: <Help/>,
+        path: "/ayuda",
+        element: <Help />,
       },
       {
         path: "/cuenta",
         element: <LayoutAccount />,
-        children:[
+        children: [
           {
-            index:true,
-            element: <Account />
+            index: true,
+            element: <Account />,
           },
           {
-            path:"login",
-            element: <Login/>,
+            path: "login",
+            element: <Login />,
           },
           {
-            path:"register",
-            element: <Register />
-          }
-        ]
+            path: "register",
+            element: <Register />,
+          },
+        ],
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
