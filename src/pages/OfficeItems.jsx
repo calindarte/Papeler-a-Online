@@ -4,6 +4,8 @@ import { useFirestore } from "../hooks/useFirestore";
 
 import FilterOrAllProducts from "../utils/FilterOrAllProducts";
 import CardBestSellers from "../components/sectionHome/CardBestSellers";
+import IconArrowBack from "../components/sectionHome/IconArrowBack";
+import IconArrowNext from "../components/sectionHome/IconArrowNext";
 
 const OfficeItems = () => {
   const {
@@ -112,18 +114,14 @@ const OfficeItems = () => {
               disabled={currentPage === 1}
              
             >
-              <span className="material-symbols-outlined ">
-                arrow_left_alt
-              </span>
+              <IconArrowBack/>
             </button>
             <span>{`Página ${currentPage} de ${filteredData.length > 0 ? totalPagesFilter:totalPages}`}</span>
             <button
               onClick={handleNextPage}
               disabled={currentPage === (filteredData.length > 0 ? totalPagesFilter:totalPages)}
             >
-              <span className="material-symbols-outlined ">
-                arrow_right_alt
-              </span>
+              <IconArrowNext/>
             </button>
           </div>
       </div>

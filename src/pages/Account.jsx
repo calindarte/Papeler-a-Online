@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import InfoAccount from "../components/sectionAccount.jsx/InfoAccount";
+import IconAccount from "../components/header/IconAccount";
 
 const Account = () => {
 
@@ -26,9 +27,7 @@ const Account = () => {
         user ? <InfoAccount /> : (<div className="py-40">
         <div className=" flex flex-col  items-center gap-4">
           <div className="">
-            <span className="material-symbols-outlined text-9xl">
-              account_circle
-            </span>
+            <IconAccount className="size-36 fill-gray-900"/>
           </div>
           <div className="flex gap-7 ">
             <Link to="/cuenta/login" onClick={scrollToTop}>

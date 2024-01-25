@@ -1,5 +1,6 @@
 import { useUserContext } from "../../context/UserContext";
 import Price from "../sectionHome/Price";
+import IconClose from "./IconClose";
 
 const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
   const { cartProduct, deleteCartProduct, calculateTotalPrice } = useUserContext();
@@ -13,7 +14,7 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
               className="ml-auto"
               onClick={() => setIsOpenCart(!isOpenCart)}
             >
-              <span className="material-symbols-outlined flex">close</span>
+              <IconClose/>
             </button>
           </div>
           <hr />
@@ -44,9 +45,9 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
                 className="ml-auto"
                 onClick={() => deleteCartProduct(product.id)}
               >
-                <span className="material-symbols-outlined flex text-xl">
-                  close
-                </span>
+                
+                 <IconClose className="size-4 "/>
+              
               </button>
             </article>
           ))}

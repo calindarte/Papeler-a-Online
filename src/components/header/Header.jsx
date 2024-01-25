@@ -5,6 +5,8 @@ import NavBar from "./NavBar";
 import { useState } from "react";
 import CartHeader from "./CartHeader";
 import { useUserContext } from "../../context/UserContext";
+import IconAccount from "./IconAccount";
+import IconCart from "./IconCart";
 
 const Header = () => {
   const {totalQuantityProduct} = useUserContext()
@@ -31,14 +33,14 @@ const Header = () => {
     
       <div className="flex gap-x-2 px-6">
         <Link to="/cuenta">
-          <span className="material-symbols-outlined flex ">account_circle</span>
+          <IconAccount />
         </Link>
         
           <button 
           onClick={()=>{setIsOpenCart(!isOpenCart)}}
           className="relative"
           >
-            <span className="material-symbols-outlined flex items-center">shopping_cart</span>
+            <IconCart/>
 
             <span className="absolute -top-3 -right-2 bg-orange-600 text-white text-xs font-bold px-2 rounded-full">{totalQuantityProduct}</span>
           </button>

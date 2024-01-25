@@ -3,6 +3,8 @@ import HeaderStore from "../components/sectionStore/HeaderStore";
 import { useFirestore } from "../hooks/useFirestore";
 import CardBestSellers from "../components/sectionHome/CardBestSellers";
 import FilterOrAllProducts from "../utils/FilterOrAllProducts";
+import IconArrowBack from "../components/sectionHome/IconArrowBack";
+import IconArrowNext from "../components/sectionHome/IconArrowNext";
 
 const ArtItems = () => {
   const {
@@ -110,18 +112,14 @@ const ArtItems = () => {
               disabled={currentPage === 1}
              
             >
-              <span className="material-symbols-outlined ">
-                arrow_left_alt
-              </span>
+             <IconArrowBack/>
             </button>
             <span>{`Página ${currentPage} de ${filteredData.length > 0 ? totalPagesFilter:totalPages}`}</span>
             <button
               onClick={handleNextPage}
               disabled={currentPage === (filteredData.length > 0 ? totalPagesFilter:totalPages)}
             >
-              <span className="material-symbols-outlined ">
-                arrow_right_alt
-              </span>
+             <IconArrowNext/>
             </button>
           </div>
         </div>

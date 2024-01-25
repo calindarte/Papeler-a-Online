@@ -1,4 +1,6 @@
 import { useState } from "react";
+import IconAdd from "./IconAdd";
+import IconMinize from "./IconMinize";
 
 const HelpItem = ({title,parrafo}) => {
   const [openItem, setOpenItem] = useState(false);
@@ -15,11 +17,9 @@ const HelpItem = ({title,parrafo}) => {
         {title}
       </span>
       {openItem ? (
-        <span className="material-symbols-outlined my-auto">
-          check_indeterminate_small
-        </span>
+        <IconMinize/>
       ) : (
-        <span className="material-symbols-outlined">add</span>
+        <IconAdd/>
       )}
     </button>
     {openItem && (

@@ -13,6 +13,8 @@ import CardCategory from "../components/sectionHome/CardCategory";
 import CardTestimony from "../components/sectionHome/CardTestimony";
 import CardOptions from "../components/sectionHome/CardOptions";
 import BestSellersCarousel from "../components/sectionHome/BestSellersCarousel";
+import IconArrowBack from "../components/sectionHome/IconArrowBack";
+import IconArrowNext from "../components/sectionHome/IconArrowNext";
 
 const ARRAY_IMGS = [imgGallery1, imgGallery2, imgGallery3, imgGallery4];
 
@@ -52,15 +54,13 @@ const Home = () => {
               className="bg-white h-10 w-10 grid place-items-center rounded-full"
               onClick={handlePre}
             >
-              <span className="material-symbols-outlined">arrow_back_ios</span>
+              <IconArrowBack/>
             </button>
             <button
               className="bg-white h-10 w-10 grid place-items-center rounded-full"
               onClick={handleNext}
             >
-              <span className="material-symbols-outlined">
-                arrow_forward_ios
-              </span>
+              <IconArrowNext/>
             </button>
           </div>
         </div>

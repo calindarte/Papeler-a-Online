@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
+import IconArrowDrop from "./IconArrowDrop";
 
 const SubMenu = () => {
   return (
@@ -53,7 +54,7 @@ const NavLink = ({ path, text }) => {
         <span className="group-hover:text-green-600 relative">{text}</span>
         {path === "/tienda" && (
 
-          <span className="material-symbols-outlined absolute text-base ">arrow_drop_down</span>
+          <span className="absolute"><IconArrowDrop/></span>
          
           
         )}

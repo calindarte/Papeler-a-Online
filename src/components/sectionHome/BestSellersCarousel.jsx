@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 import { Link } from "react-router-dom";
 import CardBestSellers from "./CardBestSellers";
+import IconArrowBack from "./IconArrowBack";
+import IconArrowNext from "./IconArrowNext";
 
 const BestSellersCarousel = () => {
   const { data, loading, getData } = useFirestore();
@@ -65,17 +67,15 @@ const BestSellersCarousel = () => {
               className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
               onClick={handlePre}
             >
-              <span className="material-symbols-outlined text-white">
-                arrow_back_ios
-              </span>
+              
+              <IconArrowBack className="fill-white"/>
+             
             </button>
             <button
               className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
               onClick={handleNext}
             >
-              <span className="material-symbols-outlined text-white">
-                arrow_forward_ios
-              </span>
+             <IconArrowNext className="fill-white"/>
             </button>
           </div>
         </div>
