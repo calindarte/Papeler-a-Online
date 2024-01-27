@@ -29,7 +29,6 @@ const PaperItems = () => {
   const totalPagesFilter = Math.ceil(totalBusqueda / productosPorPagina);
 
   useEffect(() => {
-    console.log("get paper");
     getData("papeleria");
   }, []);
 

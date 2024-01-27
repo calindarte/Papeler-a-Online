@@ -37,7 +37,6 @@ const Store = () => {
 
 
   useEffect(() => {
-    console.log("get data");
     getData();
   }, []);
 

@@ -11,12 +11,12 @@ const BestSellersCarousel = () => {
 
   useEffect(() => {
     getData();
-    
-    
   }, []);
 
   const handleNext = () => {
-    setStartIndex((prevIndex) => (prevIndex + 4 < data.length ? prevIndex + 4 : 0));
+    setStartIndex((prevIndex) =>
+      prevIndex + 4 < data.length ? prevIndex + 4 : 0
+    );
   };
 
   const handlePre = () => {
@@ -26,7 +26,6 @@ const BestSellersCarousel = () => {
   };
 
   useEffect(() => {
-    console.log('avence automatico')
     const intervalId = setInterval(() => {
       handleNext();
     }, 8000);
@@ -67,15 +66,13 @@ const BestSellersCarousel = () => {
               className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
               onClick={handlePre}
             >
-              
-              <IconArrowBack className="fill-white"/>
-             
+              <IconArrowBack className="fill-white" />
             </button>
             <button
               className="bg-[rgba(0,0,0,.6)] h-14 w-9 grid place-items-center rounded-sm"
               onClick={handleNext}
             >
-             <IconArrowNext className="fill-white"/>
+              <IconArrowNext className="fill-white" />
             </button>
           </div>
         </div>

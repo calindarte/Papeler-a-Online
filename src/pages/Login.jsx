@@ -32,8 +32,8 @@ const Login = () => {
      await login({ email, password });
       resetForm();
     } catch (error) {
-      console.log(error.code);
-      console.log(error.message);
+      // console.log(error.code);
+      // console.log(error.message);
     
       if (error.code === "auth/invalid-login-credentials") {
         return setErrors({ email: "Credenciales invalidas", password: "Credenciales invalidas" });

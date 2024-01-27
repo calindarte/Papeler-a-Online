@@ -72,9 +72,9 @@ const Footer = () => {
           <div className="flex flex-col w-28 items-center ">
             <span className="font-medium">Redes Sociales</span>
             <div className="flex gap-1">
-              <RedesSociales url="" logo={imgFacebook} />
-              <RedesSociales url="" logo={imgWhatsapp} />
-              <RedesSociales url="" logo={imgInstagram} />
+              <RedesSociales url="https://web.facebook.com/?_rdc=1&_rdr" logo={imgFacebook}  />
+              <RedesSociales  logo={imgWhatsapp} phoneNumber="3238281579"/>
+              <RedesSociales url="https://www.instagram.com/" logo={imgInstagram} />
             </div>
           </div>
         </div>

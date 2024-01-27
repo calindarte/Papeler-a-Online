@@ -28,7 +28,6 @@ const ArtItems = () => {
   const totalPagesFilter = Math.ceil(totalBusqueda / productosPorPagina);
 
   useEffect(() => {
-    console.log("get arte");
     getData("arte");
   }, []);
 

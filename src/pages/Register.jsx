@@ -34,8 +34,8 @@ const Register = () => {
       console.log("Usuario registrado");
       resetForm();
     } catch (error) {
-      console.log(error.code);
-      console.log(error.message);
+      // console.log(error.code);
+      // console.log(error.message);
       if (error.code === "auth/email-already-in-use") {
         setErrors({ email: "Email ya existe" });
       }

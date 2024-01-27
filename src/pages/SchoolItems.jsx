@@ -29,7 +29,6 @@ const SchoolItems = () => {
   const totalPagesFilter = Math.ceil(totalBusqueda / productosPorPagina);
 
   useEffect(() => {
-    console.log("get scchol");
     getData("escolar");
   }, []);
 

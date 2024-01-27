@@ -31,7 +31,6 @@ const OfficeItems = () => {
 
 
   useEffect(() => {
-    console.log("get oficina");
     getData("oficina");
   }, []);
 
