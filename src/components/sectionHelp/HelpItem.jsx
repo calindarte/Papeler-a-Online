@@ -13,11 +13,11 @@ const HelpItem = ({title,parrafo}) => {
         openItem ? "bg-green-600 text-gray-50" : "bg-[#f2f2f2]"
       }`}
     >
-      <span className="text-xl font-semibold">
+      <span className="md:text-xl font-semibold">
         {title}
       </span>
       {openItem ? (
-        <IconMinize/>
+        <IconMinize className="fill-gray-50"/>
       ) : (
         <IconAdd/>
       )}
@@ -25,7 +25,7 @@ const HelpItem = ({title,parrafo}) => {
     {openItem && (
             <>
               <div>
-                <p className="text-pretty p-3 text-lg">{parrafo}
+                <p className="text-pretty p-3 md:text-lg">{parrafo}
                 </p>
               </div>
             </>

@@ -89,8 +89,8 @@ const Home = () => {
       <section
         className="bg-Lapices-home md:bg-repeat-round "
       >
-        <div className="py-24 px-2 flex justify-center">
-          <div className="flex flex-col gap-y-6 bg-white md:px-14 px-4 py-10 md:w-[35%] rounded-lg">
+        <div className="py-24 px-6 flex justify-center">
+          <div className="flex flex-col gap-y-6 bg-white md:px-14 px-4 md:py-10 py-6 md:w-[35%] rounded-lg">
             <h2 className="text-left md:text-4xl text-xl text-gray-800 font-medium">
               Gipao
             </h2>
@@ -100,7 +100,7 @@ const Home = () => {
               productos.
             </span>
 
-            <div className="flex gap-x-14 justify-center py-6">
+            <div className="flex gap-x-14 justify-center md:py-6">
               <div className="flex flex-col gap-y-4 text-center md:px-6">
                 <span className="md:text-4xl  text-xl font-bold tracking-widest text-[#c39a5f]">
                   100+
@@ -118,7 +118,7 @@ const Home = () => {
                 </span>
               </div>
             </div>
-            <button className="bg-green-700 px-16 py-2 md:text-base text-xs rounded-full text-gray-100 tracking-wider ">
+            <button className="bg-green-700 md:px-16 py-2 md:text-base text-xs rounded-full text-gray-100 tracking-wider ">
               VER PRODUCTOS
             </button>
           </div>

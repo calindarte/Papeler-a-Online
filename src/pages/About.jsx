@@ -2,14 +2,14 @@ import InfoAbout from "../components/sectionAbout/InfoAbout";
 
 const About = () => {
   return (
-    <section className="bg-[#f5f5f5] px-16 py-24 ">
-      <div className=" bg-white flex flex-col gap-8 p-12 shadow-lg text-lg text-gray-800">
+    <section className="bg-[#f5f5f5] md:px-16 md:py-24 p-6 ">
+      <div className=" bg-white flex flex-col gap-8 md:p-12 p-6 shadow-lg text-lg text-gray-800">
 
         <div className="flex flex-col gap-y-10 text-center pb-6 ">
-          <h2 className=" text-4xl font-bold">
+          <h2 className=" md:text-4xl text-lg font-bold">
             Papeleria en Agustín Codazzi, La Moderna
           </h2>
-          <p className="text-gray-700">
+          <p className="text-gray-700 md:text-lg text-base">
             Bienvenido a Moderna, un referente de excelencia en papelería y
             útiles escolares ubicado estratégicamente en Agustín Codazzi, Cesar.
             Desde nuestra fundación hace más de 5 años, nos hemos consolidado
@@ -17,7 +17,7 @@ const About = () => {
             para satisfacer las necesidades de nuestra apreciada clientela.
           </p>
         </div>
-        <div className="grid grid-cols-2 grid-rows-2 gap-8 ">
+        <div className="grid md:grid-cols-2 md:grid-rows-2 gap-8 ">
           <InfoAbout
             titulo="Nuestra Historia"
             parrafo="Desde 2019, hemos sido parte integral de la comunidad, creciendo junto
@@ -51,7 +51,7 @@ const About = () => {
 
         </div>
         <div className="py-8">
-        <p className="text-center  text-gray-600">
+        <p className="text-center  text-gray-600 text-base md:text-lg">
           Gracias por confiar en La Moderna. Nuestro compromiso con la calidad,
           la variedad y el servicio excepcional nos impulsa a seguir siendo tu
           elección número uno en papelería y útiles escolares. ¡Esperamos

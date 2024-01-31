@@ -4,19 +4,19 @@ const Help = () => {
   return (
     <div>
       <div className="bg-green-600 py-32 ">
-        <h1 className="text-center text-5xl font-medium text-gray-50">
+        <h1 className="text-center md:text-5xl text-xl font-medium text-gray-50">
           Preguntas Frecuentes
         </h1>
       </div>
 
       <div className="pt-20 text-center">
-        <p className="text-4xl flex flex-col font-bold">
+        <p className="md:text-4xl text-lg flex flex-col font-bold">
           <span>¿Tienes Una Pregunta?</span>
           <span>Aquí Te Respondemos Algunas</span>
         </p>
       </div>
-      <div className="px-16 text-gray-800 flex flex-col gap-y-4 py-20">
-        <h2 className="font-bold text-4xl">Pedidos</h2>
+      <div className="md:px-16 px-6 text-gray-800 flex flex-col gap-y-4 py-20">
+        <h2 className="font-bold md:text-4xl text-xl">Pedidos</h2>
         <div className="flex flex-col gap-y-2 pt-4">
           <HelpItem
             title="Tiempo de Entrega de los Pedidos"
@@ -45,7 +45,7 @@ const Help = () => {
             parrafo="Compra Fácil en La Moderna: Realizar tu pedido es sencillo. Encuentra tus productos buscando en el navegador o explorando nuestras categorías. Haz clic en 'Comprar ahora', revisa tu carrito y finaliza la compra proporcionando tus datos y dirección. Elige el método de pago: tarjeta de crédito, débito o PSE. Recibirás confirmación y un número de seguimiento por correo electrónico. Tu pedido llegará a la dirección indicada. Ante cualquier duda, nuestro equipo de Servicio al Cliente está listo para ayudarte. ¡Así de fácil y rápido!"
           />
         </div>
-        <h2 className="font-bold text-4xl pt-4">Formas de Pago</h2>
+        <h2 className="font-bold md:text-4xl text-xl pt-4">Formas de Pago</h2>
         <div className="flex flex-col gap-y-2 pt-4">
           <HelpItem
             title="Tarjetas de Crédito"
@@ -69,7 +69,7 @@ const Help = () => {
           />
         </div>
 
-        <h2 className="font-bold text-4xl pt-4">Productos</h2>
+        <h2 className="font-bold md:text-4xl text-xl pt-4">Productos</h2>
         <div className="flex flex-col gap-y-2 pt-4">
           <HelpItem
             title="Búsqueda de productos"
@@ -81,7 +81,7 @@ const Help = () => {
           />
         </div>
 
-        <h2 className="font-bold text-4xl pt-4">Información de Contacto</h2>
+        <h2 className="font-bold md:text-4xl text-xl pt-4">Información de Contacto</h2>
         <div className="flex flex-col gap-y-2 pt-4">
           <HelpItem
             title="Como contactarnos"

@@ -87,8 +87,8 @@ const Store = () => {
       </section>
       <section className="bg-[#f5f5f5]">
         <div className="flex flex-col p-16 items-center justify-center gap-5">
-          <h2 className="text-4xl font-medium">Nuestros Productos</h2>
-          <span className="text-gray-800 text-lg">
+          <h2 className="md:text-4xl text-xl font-medium">Nuestros Productos</h2>
+          <span className="text-gray-800 md:text-lg text-center">
             Los artículos de papelería en la ciudad de Valledupar
           </span>
         </div>
@@ -100,7 +100,7 @@ const Store = () => {
             totalBusqueda={totalBusqueda}
             totalData={totalData}
           />
-          <div className="grid grid-cols-4  gap-12 px-10  py-6">
+          <div className="grid md:grid-cols-4  gap-12 px-10  py-6">
             {filteredData.length > 0
               ? productsToShowFilterData.map((item) => (
                   <div key={item.id}>

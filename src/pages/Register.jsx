@@ -54,9 +54,9 @@ const Register = () => {
 
   return (
     
-    <div className="container mx-auto py-20 px-64">
-      <div className="flex flex-col gap-y-4 px-40 border py-20 shadow-xl rounded-md bg-slate-50 ">
-      <h1 className="text-center font-semibold uppercase">Registrarse</h1>
+    <div className="container mx-auto py-20 md:px-64 px-4">
+      <div className="flex flex-col gap-y-4 md:px-40 px-6 border py-20 md:shadow-xl shadow-sm rounded-md bg-slate-50 ">
+      <h1 className="text-center md:text-base text-sm font-semibold uppercase">Registrarse</h1>
       <Formik
         onSubmit={onSubmit}
         initialValues={{ email: "", password: "" }}
@@ -84,7 +84,7 @@ const Register = () => {
                onChange={handleChange}
                name="email"
                onBlur={handleBlur}
-               className=" relative z-10 py-2 pr-2 pl-7 border shadow-sm  border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+               className=" relative z-10 py-2 pr-2 pl-7 border shadow-sm  border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md md:text-base text-sm focus:ring-1"
              />
              <span className="text-xs text-red-600">
                {errors.email && touched.email && errors.email}
@@ -108,7 +108,7 @@ const Register = () => {
                onChange={handleChange}
                name="password"
                onBlur={handleBlur}
-               className="relative z-10 py-2 pr-2 pl-7 p-2 border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+               className="relative z-10 py-2 pr-2 pl-7 p-2 border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md md:text-base text-sm focus:ring-1"
              />
              <span className="text-xs text-red-600">
                {errors.password && touched.password && errors.password}
@@ -118,12 +118,12 @@ const Register = () => {
              <button
                type="submit"
                disabled={isSubmitting}
-               className="rounded-lg p-2 bg-blue-500  hover:bg-blue-600 text-white font-semibold sm:text-sm w-full"
+               className="rounded-lg p-2 bg-blue-500  hover:bg-blue-600 text-white font-semibold md:text-base text-sm w-full"
              >
                Regístrate
              </button>
            </div>
-           <div className="text-center hover:text-blue-600 sm:text-sm">
+           <div className="text-center hover:text-blue-600 md:text-base text-sm">
              <Link to="/cuenta/login">¿Ya tienes una cuenta? Ingresa</Link>
            </div>
          </form>

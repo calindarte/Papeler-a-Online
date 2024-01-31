@@ -6,15 +6,15 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
   const { cartProduct, deleteCartProduct, calculateTotalPrice } = useUserContext();
   return (
     <div className="fixed top-0 left-0 bg-black/70 w-full h-full z-10">
-      <section className="absolute right-0 top-0 w-[30%] z-10 bg-gray-50 h-full shadow-xl">
+      <section className="absolute right-0 top-0 md:w-[30%] w-[60%] z-10 bg-gray-50 h-full shadow-xl">
         <div className="flex flex-col">
           <div className="flex p-4">
-            <h4 className="text-lg font-bold">Carrito</h4>
+            <h4 className="md:text-lg font-bold">Carrito</h4>
             <button
               className="ml-auto"
               onClick={() => setIsOpenCart(!isOpenCart)}
             >
-              <IconClose/>
+              <IconClose className="md:w-[24px] md:h-[24px] w-4 h-4"/>
             </button>
           </div>
           <hr />
@@ -26,10 +26,10 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
           {cartProduct.map((product) => (
             <article
               key={product.id}
-              className="grid grid-cols-[1fr_4fr_1fr] gap-6 px-4 py-4 items-center text-sm border"
+              className="grid md:grid-cols-[1fr_4fr_1fr]  gap-6 px-4 py-4 items-center md:text-sm text-xs border"
             >
-              <div className="bg-white">
-              <img src={product.imagen} alt=""  className="object-contain aspect-square"/>
+              <div className="md:bg-white flex justify-center">
+              <img src={product.imagen} alt=""  className="size-16 md:size-auto object-contain md:aspect-square"/>
               </div>
               <div>
                 <h6 className="uppercase">{product.nombre}</h6>
@@ -42,11 +42,11 @@ const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
                 </p>
               </div>
               <button
-                className="ml-auto"
+                className="ml-auto "
                 onClick={() => deleteCartProduct(product.id)}
               >
                 
-                 <IconClose className="size-4 "/>
+                 <IconClose className="size-4  "/>
               
               </button>
             </article>
