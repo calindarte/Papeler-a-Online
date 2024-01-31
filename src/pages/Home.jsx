@@ -47,7 +47,7 @@ const Home = () => {
           <img
             src={ARRAY_IMGS[index]}
             alt="imgGallery"
-            className="object-fill max-h-96 w-full cursor-pointer"
+            className="object-cover md:h-[400px] h-[250px] w-full cursor-pointer"
           />
           <div className="absolute top-1/2 left-0 -translate-y-1/2 flex items-center justify-between w-full px-4">
             <button
@@ -87,38 +87,38 @@ const Home = () => {
       <BestSellersCarousel />
 
       <section
-        className="bg-Lapices-home bg-repeat-round "
+        className="bg-Lapices-home md:bg-repeat-round "
       >
-        <div className="py-24 flex justify-center">
-          <div className="flex flex-col gap-y-6 bg-white px-14 py-10 w-[35%] rounded-lg">
-            <h2 className="text-left text-4xl text-gray-800 font-medium">
+        <div className="py-24 px-2 flex justify-center">
+          <div className="flex flex-col gap-y-6 bg-white md:px-14 px-4 py-10 md:w-[35%] rounded-lg">
+            <h2 className="text-left md:text-4xl text-xl text-gray-800 font-medium">
               Gipao
             </h2>
-            <span className="text-left">
+            <span className="text-left md:text-base text-sm">
               Los mejores productos escolares, de arte y oficina Gipao. Somos tu
               compañía para toda la vida, encuentra aquí todos nuestros
               productos.
             </span>
 
             <div className="flex gap-x-14 justify-center py-6">
-              <div className="flex flex-col gap-y-4 text-center px-6">
-                <span className="text-4xl font-bold tracking-widest text-[#c39a5f]">
+              <div className="flex flex-col gap-y-4 text-center md:px-6">
+                <span className="md:text-4xl  text-xl font-bold tracking-widest text-[#c39a5f]">
                   100+
                 </span>
-                <span className="text-xl font-bold text-gray-700">
+                <span className="md:text-xl text-base font-bold text-gray-700">
                   Productos diferentes Gipao
                 </span>
               </div>
               <div className="flex flex-col text-center px-6 gap-y-4 ">
-                <span className="text-4xl font-bold tracking-widest text-[#c39a5f]">
+                <span className="md:text-4xl text-xl font-bold tracking-widest text-[#c39a5f]">
                   20k+
                 </span>
-                <span className="text-xl font-bold text-left text-gray-700">
+                <span className="md:text-xl text-base font-bold text-left text-gray-700">
                   Productos vendidos
                 </span>
               </div>
             </div>
-            <button className="bg-green-700 px-16 py-2 rounded-full text-gray-100 tracking-wider ">
+            <button className="bg-green-700 px-16 py-2 md:text-base text-xs rounded-full text-gray-100 tracking-wider ">
               VER PRODUCTOS
             </button>
           </div>
@@ -126,8 +126,8 @@ const Home = () => {
       </section>
       <section className="bg-gradient-to-b from-green-400 to-red-400">
         <div>
-          <h2 className="text-center text-4xl py-14">Testimonio</h2>
-          <div className="grid grid-cols-[4fr_4fr_4fr] gap-x-8 px-24 pb-24">
+          <h2 className="text-center md:text-4xl text-2xl py-14">Testimonio</h2>
+          <div className="grid md:grid-cols-[4fr_4fr_4fr] gap-8 md:px-24 px-8 pb-24">
             <CardTestimony title="La Moderna superó mis expectativas." descripcion="La variedad de productos y la facilidad de compra en línea hicieron que mi experiencia fuera excepcional. Definitivamente, volveré." nombre="Ana S." role="Cliente Satisfecha" />
             <CardTestimony title="Como artista, La Moderna fue mi elección perfecta." descripcion="La amplia gama de suministros y la asistencia del equipo de atención al cliente hicieron que mi compra fuera inmejorable. ¡Estoy encantado con mi experiencia de compra!" nombre="Carlos M." role="Artista Creativo" />
             <CardTestimony title="La Moderna es mi tienda de confianza para la organización escolar." descripcion="Desde útiles escolares hasta mochilas, encontré todo lo que necesitaba. La entrega rápida y eficiente hizo que mi vida fuera más fácil. ¡Recomiendo La Moderna a todas las madres ocupadas!" nombre="Isabel G." role="Organización Escolar" />
@@ -135,7 +135,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className="flex col-span-3 gap-x-14 px-20 py-16 justify-center">
+        <div className="flex flex-col md:flex-row md:col-span-3 gap-14 px-20 py-16 justify-center">
           <CardOptions
             url={imgOptionIcon1}
             parrafo="¡ESTAMOS PARA SERVIRTE!"

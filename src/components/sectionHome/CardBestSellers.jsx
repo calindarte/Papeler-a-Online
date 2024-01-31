@@ -57,12 +57,12 @@ const CardBestSellers = ({ imgProduct, text, price, item, product }) => {
 
         <div className="flex flex-col text-sm gap-y-4 py-4 ">
           <Link to={`/tienda/producto/${item}`} >
-            <button className="bg-green-700 w-full px-4 py-2 rounded-xl text-gray-100" >
+            <button className="bg-green-700 w-full px-4 py-2 md:text-base text-xs rounded-xl text-gray-100" >
               VER PRODUCTO
             </button>
           </Link>
 
-          <button className="bg-green-700 w-full px-4 py-2 rounded-xl text-gray-100" onClick={handleAddToCart}>
+          <button className="bg-green-700 w-full px-4 py-2 md:text-base text-xs rounded-xl text-gray-100" onClick={handleAddToCart}>
             AÑADIR AL CARRITO
           </button>
         </div>

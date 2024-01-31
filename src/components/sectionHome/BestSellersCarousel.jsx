@@ -4,24 +4,30 @@ import { Link } from "react-router-dom";
 import CardBestSellers from "./CardBestSellers";
 import IconArrowBack from "./IconArrowBack";
 import IconArrowNext from "./IconArrowNext";
+import { useMediaQuery } from "react-responsive";
 
 const BestSellersCarousel = () => {
   const { data, loading, getData } = useFirestore();
   const [startIndex, setStartIndex] = useState(0);
+  const isMobile = useMediaQuery({ maxWidth: 767 }); 
+
 
   useEffect(() => {
     getData();
   }, []);
 
+  const itemsToShow = isMobile ? 1 : 4;
+
+
   const handleNext = () => {
     setStartIndex((prevIndex) =>
-      prevIndex + 4 < data.length ? prevIndex + 4 : 0
+      prevIndex + itemsToShow < data.length ? prevIndex + itemsToShow : 0
     );
   };
 
   const handlePre = () => {
     setStartIndex((prevIndex) =>
-      prevIndex - 4 >= 0 ? prevIndex - 4 : Math.floor(data.length / 4) * 4
+      prevIndex - itemsToShow >= 0 ? prevIndex - itemsToShow : Math.floor(data.length / itemsToShow) * itemsToShow
     );
   };
 
@@ -37,17 +43,17 @@ const BestSellersCarousel = () => {
     <section className="bg-[#f5f5f5]">
       <div>
         <div className="flex flex-col justify-center items-center gap-6 p-10">
-          <h2 className="font-mono text-5xl">Más Vendidos</h2>
-          <p className="text-lg text-gray-500">
+          <h2 className="font-mono md:text-5xl text-xl">Más Vendidos</h2>
+          <p className="md:text-lg text-center text-gray-500">
             Los artículos de papelería más comprados
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-x-6 px-20 justify-center relative transition-none">
+        <div className={`grid gap-x-6 px-20 justify-center relative transition-none ${isMobile ? 'grid-cols-1' : 'md:grid-cols-4'}`}>
           {loading.getData ? (
             <p className="text-center">Cargando productos...</p>
           ) : (
-            data.slice(startIndex, startIndex + 4).map((item) => (
+            data.slice(startIndex, startIndex + itemsToShow).map((item) => (
               <div key={item.id}>
                 <CardBestSellers
                   imgProduct={item.imagen}
@@ -79,7 +85,7 @@ const BestSellersCarousel = () => {
         <div className="text-center py-20">
           <Link
             to="/tienda"
-            className="bg-green-700 hover:bg-green-600 px-16 py-2 rounded-full text-gray-100 tracking-wider"
+            className="bg-green-700 hover:bg-green-600 px-16 py-2 md:text-base text-xs rounded-full text-gray-100 tracking-wider"
           >
             VER TODOS
           </Link>

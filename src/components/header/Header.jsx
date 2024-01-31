@@ -7,31 +7,44 @@ import CartHeader from "./CartHeader";
 import { useUserContext } from "../../context/UserContext";
 import IconAccount from "./IconAccount";
 import IconCart from "./IconCart";
+import IconMenu from "./IconMenu";
 
 const Header = () => {
   const {totalQuantityProduct} = useUserContext()
   const [isOpenCart,setIsOpenCart]=useState(false)
+  const [openMenu, setOpenMenu] = useState(false)
+
+
+  const handleOpenMenu = ()=>{
+    setOpenMenu(true)
+  
+  }
 
 
 
   return (
     <header className="flex items-center justify-between px-8 py-5 shadow-sm border bg-gray-50">
+      <button onClick={handleOpenMenu} className="md:hidden ">
+        <IconMenu />
+      </button>
       <div className="flex items-center gap-x-4">
         <div className="">
-          <img src={logoHeader} alt="Logo" className="size-20" />
+          <img src={logoHeader} alt="Logo" className="size-10 md:size-20" />
         </div>
         <div>
-          <p className="font-bold text-xl ">MODERNA</p>
-          <p className="font-normal tracking-widest text-center text-red-500">Papelería</p>
+          <p className="font-bold md:text-xl ">MODERNA</p>
+          <p className="font-normal tracking-widest text-center text-red-500 text-xs md:text-base">Papelería</p>
         </div>
       </div>
 
 
       <div className="flex items-center ">
-        <NavBar />
+        <NavBar openMenu={openMenu} setOpenMenu={setOpenMenu}/>
       
     
-      <div className="flex gap-x-2 px-6">
+      <div className="flex gap-x-2 md:px-6">
+
+      
         <Link to="/cuenta">
           <IconAccount />
         </Link>

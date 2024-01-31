@@ -16,16 +16,16 @@ const Footer = () => {
 
   return (
     <footer className="bg-green-600">
-      <div className="flex  items-center justify-center py-16 px-10 gap-4 border-b border-gray-800 text-gray-9500 ">
+      <div className="flex md:flex-row flex-col items-center justify-center md:py-16 py-8 md:px-10 px-6 gap-4 border-b border-gray-800 text-gray-9500 ">
         <div>
-          <img src={logoHeader} alt="Logo" className="w-48" />
+          <img src={logoHeader} alt="Logo" className="w-14 md:w-48" />
         </div>
         <div>
-          <p className="font-bold text-xl ">MODERNA</p>
-          <p className="font-normal tracking-widest text-center ">Papelería</p>
+          <p className="font-bold md:text-xl ">MODERNA</p>
+          <p className="font-normal tracking-widest text-center md:text-base text-xs">Papelería</p>
         </div>
 
-        <div className="px-4">
+        <div className="md:px-4 text-justify md:text-base text-sm">
           <p>
             Bienvenido a nuestra papelería, tu destino para todo lo relacionado
             con papelería. Descubre una selección única de productos para la
@@ -35,13 +35,13 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className="flex items-start justify-center gap-3 ">
-          <div className="flex flex-col w-44">
+        <div className="flex items-start justify-center gap-3 md:text-base text-sm">
+          <div className="flex flex-col md:w-44">
             <span className="font-medium">Ubicacion:</span>
             <span>Agustin Codazzi, Cesar</span>
             <span>Carrera 11a #24a-40</span>
           </div>
-          <div className="w-36">
+          <div className="md:w-36">
             <h2 className="font-medium">Menú</h2>
             <ul>
               <li>
@@ -69,7 +69,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col w-28 items-center ">
+          <div className="flex flex-col md:w-28 items-center ">
             <span className="font-medium">Redes Sociales</span>
             <div className="flex gap-1">
               <RedesSociales url="https://web.facebook.com/?_rdc=1&_rdr" logo={imgFacebook}  />
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="justify-center items-center flex p-6 gap-x-1 font-medium font-mono ">
+      <div className="justify-center items-center flex p-6 gap-x-1 font-medium font-mono md:text-base text-xs ">
         <span className="material-symbols-outlined text-base">copyright</span>
         <p> 2024 Moderna - Developed By Carlos Dev </p>
       </div>

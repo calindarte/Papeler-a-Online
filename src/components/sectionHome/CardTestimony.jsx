@@ -6,7 +6,7 @@ const CardTestimony = ({title, descripcion, nombre, role}) => {
     <div className="bg-white p-8 flex flex-col  gap-y-4 rounded-md ">
       <div className="min-h-52 flex flex-col gap-y-2">
             <h4 className="font-medium text-lg">{title}</h4>
-            <p className="text-justify">{descripcion}</p>
+            <p className="md:text-justify">{descripcion}</p>
 
       </div>
            
@@ -16,8 +16,8 @@ const CardTestimony = ({title, descripcion, nombre, role}) => {
 
               <img src={imgPerfil} alt="perfil" className="size-20 text-left" />
               <div className="flex flex-col">
-              <span className="text-lg tracking-wider text-[#b38944]">{nombre}</span>
-              <span>{role}</span>
+              <span className="md:text-lg tracking-wider text-[#b38944]">{nombre}</span>
+              <span className="md:text-base text-xs">{role}</span>
               </div>
 
        

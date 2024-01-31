@@ -11,7 +11,7 @@ const Category = ({ text, url }) => {
         <img src={url} alt={text} className="rounded-md" />
       </div>
       <div>
-      <p className="font-normal tracking-wider text-center text-gray-800 text-base">
+      <p className="font-normal tracking-wider text-center text-gray-800 md:text-base text-xs">
         {text}
       </p>
         
@@ -23,7 +23,7 @@ const Category = ({ text, url }) => {
 
 const CardCategory = () => {
   return (
-    <div className="flex gap-x-16 px-24 py-16 justify-center">
+    <div className="md:flex grid grid-cols-2 grid-rows-2 gap-6 p-6 md:gap-x-16 md:px-24 py-16 justify-center">
       <Link to="/tienda/oficina">
         {<Category text="ELEMENTOS DE OFICINA" url={imgCategory1} />}
       </Link>
