@@ -1,4 +1,5 @@
 import { useUserContext } from "../../context/UserContext";
+import IconAccount from "../header/IconAccount";
 import NavBarAccount from "./NavBarAccount";
 
 const InfoAccount = () => {
@@ -11,8 +12,8 @@ const InfoAccount = () => {
 
     
   return (
-    <div className="p-20 bg-[#F5F5F5]">
-      <div className="bg-white p-8 flex  shadow-xl">
+    <div className="md:p-20 p-3 bg-[#F5F5F5]">
+      <div className="bg-white p-8 flex flex-col-reverse gap-y-8 md:flex-row  shadow-xl md:text-base text-sm">
         <div className="flex flex-col gap-8 px-4  w-[80%]">
           <p>Hola {nameUser}</p>
           <p>
@@ -23,10 +24,8 @@ const InfoAccount = () => {
         </div>
         <div className="border-l-2 px-2 ">
             <li className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-7xl">
-                account_circle
-              </span>
-              <h1>{nameUser}</h1>
+              <IconAccount className="size-16 fill-gray-800" />
+              <h1 className="first-letter:uppercase">{nameUser}</h1>
             </li>
             <NavBarAccount/>
           

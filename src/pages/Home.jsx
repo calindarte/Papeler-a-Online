@@ -105,7 +105,7 @@ const Home = () => {
                 <span className="md:text-4xl  text-xl font-bold tracking-widest text-[#c39a5f]">
                   100+
                 </span>
-                <span className="md:text-xl text-base font-bold text-gray-700">
+                <span className="md:text-xl text-sm font-bold text-gray-700">
                   Productos diferentes Gipao
                 </span>
               </div>
@@ -113,7 +113,7 @@ const Home = () => {
                 <span className="md:text-4xl text-xl font-bold tracking-widest text-[#c39a5f]">
                   20k+
                 </span>
-                <span className="md:text-xl text-base font-bold text-left text-gray-700">
+                <span className="md:text-xl text-sm font-bold text-left text-gray-700">
                   Productos vendidos
                 </span>
               </div>

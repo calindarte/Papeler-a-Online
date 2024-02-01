@@ -78,7 +78,7 @@ const SchoolItems = () => {
           totalBusqueda={totalBusqueda}
           totalData={totalData}
         />
-        <div className="grid grid-cols-4  gap-12 px-10  py-6">
+        <div className="grid md:grid-cols-4  gap-12 px-10  py-6">
           {filteredData.length > 0
             ? productsToShowFilterData.map((item) => (
                 <div key={item.id}>

@@ -86,7 +86,7 @@ const Store = () => {
         <CardCategory />
       </section>
       <section className="bg-[#f5f5f5]">
-        <div className="flex flex-col p-16 items-center justify-center gap-5">
+        <div className="flex flex-col px-16 pt-16 items-center justify-center gap-5">
           <h2 className="md:text-4xl text-xl font-medium">Nuestros Productos</h2>
           <span className="text-gray-800 md:text-lg text-center">
             Los artículos de papelería en la ciudad de Valledupar

@@ -49,7 +49,7 @@ const BestSellersCarousel = () => {
           </p>
         </div>
 
-        <div className={`grid gap-x-6 px-20 justify-center relative transition-none ${isMobile ? 'grid-cols-1' : 'md:grid-cols-4'}`}>
+        <div className={`grid gap-x-6 md:px-20 px-16 justify-center relative transition-none ${isMobile ? 'grid-cols-1' : 'md:grid-cols-4'}`}>
           {loading.getData ? (
             <p className="text-center">Cargando productos...</p>
           ) : (

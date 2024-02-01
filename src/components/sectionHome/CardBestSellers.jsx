@@ -50,7 +50,7 @@ const CardBestSellers = ({ imgProduct, text, price, item, product }) => {
           </div>
 
           <span>
-            <img src={imgStar} alt="star" className="w-28 h-4 object-cover" />
+            <img src={imgStar} alt="star" className="md:w-28 w-24 h-4 object-cover" />
           </span>
           <Price precio={price} />
         </div>

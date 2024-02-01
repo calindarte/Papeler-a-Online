@@ -14,7 +14,7 @@ const FilterOrAllProducts = ({ onChangeOrder, onSearch, totalBusqueda, totalData
 
  
   return (
-    <div className="flex md:flex-row flex-col md:items-center gap-3 justify-between px-10 pb-10 md:py-10">
+    <div className="flex md:flex-row flex-col md:items-center gap-3 justify-between px-10 pb-10 py-10">
       <p className="text-left md:text-base text-sm ">{`Mostrando ${totalBusqueda > 0 ? totalBusqueda :totalData} resultados`}</p>
 
       <select onChange={(e) => onChangeOrder(e.target.value)} className=" w-[85%] md:w-auto md:text-base text-sm border border-slate-400 px-4 py-1 rounded-lg focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500">
