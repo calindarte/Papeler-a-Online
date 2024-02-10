@@ -5,6 +5,9 @@ import { useUserContext } from "../context/UserContext";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+import IconLogin from "../components/sectionAccount/IconLogin"
+import IconPasskey from "../components/sectionAccount/IconPasskey";
+
 const Login = () => {
   const navigate = useNavigate();
   const { user } = useUserContext();
@@ -79,9 +82,9 @@ const Login = () => {
                   Email address
                 </label>
 
-                <span className="material-symbols-outlined absolute z-20 pt-2 opacity-95">
-                  login
-                </span>
+                
+                <IconLogin className="absolute mt-2 md:mt-2.5 z-20 opacity-85"/>
+                
 
                 <input
                   id="email"
@@ -105,8 +108,7 @@ const Login = () => {
                 >
                   Password
                 </label>
-                <span className="material-symbols-outlined absolute z-20 p-1 text-[23px] opacity-95">passkey</span>
-
+                <IconPasskey className="absolute ml-[3px] mt-[6px] md:mt-2  z-20  opacity-85"/>
                 <input
                   id="password"
                   type="password"

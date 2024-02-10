@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import imgWhatsapp from "../images/redesSociales/Logo Whatsapp PNG.jpg";
 import { useUserContext } from "../context/UserContext";
 import BestSellersCarousel from "../components/sectionHome/BestSellersCarousel";
+import IconVerified from "../components/sectionProductDetails/IconVerified";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -152,15 +153,15 @@ const ProductDetails = () => {
             </span>
             <ul className="flex flex-col gap-y-2">
               <li className="flex items-center">
-                <span className="material-symbols-outlined">verified_user</span>
+                <IconVerified />
                 <span>Productos de calidad</span>
               </li>
               <li className="flex items-center">
-                <span className="material-symbols-outlined">verified_user</span>
+              <IconVerified />
                 <span>Reembolsos sin problemas</span>
               </li>
               <li className="flex items-center">
-                <span className="material-symbols-outlined">verified_user</span>
+              <IconVerified />
                 <span>Pagos seguros</span>
               </li>
             </ul>

@@ -5,7 +5,7 @@ import IconClose from "./IconClose";
 const CartHeader = ({ setIsOpenCart, isOpenCart }) => {
   const { cartProduct, deleteCartProduct, calculateTotalPrice } = useUserContext();
   return (
-    <div className="fixed top-0 left-0 bg-black/70 w-full h-full z-10">
+    <div className="fixed top-0 left-0 bg-black/70 w-full h-full z-20">
       <section className="absolute right-0 top-0 md:w-[30%] w-[60%] z-10 bg-gray-50 h-full shadow-xl">
         <div className="flex flex-col">
           <div className="flex p-4">

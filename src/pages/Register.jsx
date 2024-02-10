@@ -4,6 +4,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import IconLogin from "../components/sectionAccount/IconLogin";
+import IconPasskey from "../components/sectionAccount/IconPasskey";
 
 const Register = () => {
 
@@ -72,9 +74,8 @@ const Register = () => {
                Email address
              </label>
 
-             <span className="material-symbols-outlined absolute z-20 pt-2 opacity-95">
-               login
-             </span>
+             <IconLogin className="absolute mt-2 md:mt-2.5 z-20 opacity-85"/>
+
 
              <input
                id="email"
@@ -98,7 +99,7 @@ const Register = () => {
              >
                Password
              </label>
-             <span className="material-symbols-outlined absolute z-20 p-1 text-[23px] opacity-95">passkey</span>
+             <IconPasskey className="absolute ml-[3px] mt-[6px] md:mt-2  z-20  opacity-85"/>
 
              <input
                id="password"

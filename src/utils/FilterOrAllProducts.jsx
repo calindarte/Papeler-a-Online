@@ -1,4 +1,5 @@
 import { useState } from "react";
+import IconSearch from "./IconSearch";
 
 
 const FilterOrAllProducts = ({ onChangeOrder, onSearch, totalBusqueda, totalData }) => {
@@ -34,9 +35,8 @@ const FilterOrAllProducts = ({ onChangeOrder, onSearch, totalBusqueda, totalData
           onChange={(e) => setTextInput(e.target.value)}
           className="relative border border-slate-400 px-4 py-1 rounded-lg text-sm md:text-base focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
         />
-        <span className="material-symbols-outlined text-blue-400 absolute md:right-[3.5%] right-[39%]">
-          search
-        </span>
+        
+        <IconSearch className="fill-blue-400 absolute md:right-[3.5%] right-[39%]" />
       </form>
       
     </div>

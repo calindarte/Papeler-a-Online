@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
-import InfoAccount from "../components/sectionAccount.jsx/InfoAccount";
+import InfoAccount from "../components/sectionAccount/InfoAccount";
 import IconAccount from "../components/header/IconAccount";
 
 const Account = () => {

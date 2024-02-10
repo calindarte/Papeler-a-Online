@@ -1,5 +1,12 @@
 import { useState } from "react";
 import InputForm from "../components/sectionContact/InputForm";
+import IconMail from "../components/sectionContact/IconMail";
+import IconCall from "../components/sectionContact/IconCall";
+import IconLocation from "../components/sectionContact/IconLocation";
+
+
+
+
 
 const Contact = () => {
   const [nombre, setNombre] = useState("");
@@ -84,7 +91,7 @@ const Contact = () => {
         <div className="flex md:flex-row flex-col justify-center md:gap-x-12 gap-y-3 px-4  md:py-20 py-8 ">
 
           <div className="flex bg-[#f5f5f5] items-center gap-4 rounded-lg py-6 px-10">
-            <span className="material-symbols-outlined text-4xl text-white font-light bg-amber-600 rounded-full px-2 py-1 ">mail</span>
+            <IconMail className="fill-white bg-amber-600 rounded-full size-10 md:size-14 p-2  "/>
           
             <p className="flex flex-col md:text-xl text-sm ">
               <span className="font-medium ">Envianos un Email</span>
@@ -93,8 +100,7 @@ const Contact = () => {
           </div>
 
           <div className="flex bg-[#f5f5f5] items-center gap-4 rounded-lg py-6 px-10">
-            <span className="material-symbols-outlined text-4xl text-white font-light bg-amber-600 rounded-full px-2 py-1 ">call</span>
-          
+              <IconCall className="fill-white bg-amber-600 rounded-full size-10 md:size-14 p-2"/>
             <p className="flex flex-col md:text-xl text-sm ">
               <span className="font-medium  ">Llámanos</span>
               <span className="md:text-base">(+57) 301 4782097</span>
@@ -102,8 +108,7 @@ const Contact = () => {
           </div>
 
           <div className="flex bg-[#f5f5f5] items-center gap-4 rounded-lg py-6 px-10">
-            <span className="material-symbols-outlined text-4xl text-white font-light bg-amber-600 rounded-full px-2 py-1 ">location_on</span>
-          
+            <IconLocation className="fill-white bg-amber-600 rounded-full size-10 md:size-14 p-2"/>
             <p className="flex flex-col md:text-xl text-sm ">
               <span className="font-medium">Encuéntranos</span>
               <span className="md:text-base">Carrera 11a #24a-40</span>

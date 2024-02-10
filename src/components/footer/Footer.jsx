@@ -5,6 +5,7 @@ import imgFacebook from "../../images/redesSociales/facebook_5968903.png";
 import imgWhatsapp from "../../images/redesSociales/whatsapp_4494470.png";
 import imgInstagram from "../../images/redesSociales/instagram_4494468.png";
 import { Link } from "react-router-dom";
+import IconCopyright from "./IconCopyright";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -81,7 +82,7 @@ const Footer = () => {
       </div>
 
       <div className="justify-center items-center flex p-6 gap-x-1 font-medium font-mono md:text-base text-xs ">
-        <span className="material-symbols-outlined text-base">copyright</span>
+        <IconCopyright className="size-4"/>
         <p> 2024 Moderna - Developed By Carlos Dev </p>
       </div>
     </footer>
